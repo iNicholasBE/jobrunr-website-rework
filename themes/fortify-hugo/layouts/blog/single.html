@@ -24,13 +24,13 @@
           </ul>
         </div>
         <div
-          class="col-12 pt-20 md:pt-32"
+          class="col-12 pt-8"
           data-aos="fade-up-sm"
           data-aos-delay="200">
           <div class="mb-10">
             {{ $image:= .Params.image }}
             {{ if $image }}
-              <div class="mb-10">
+              <div class="">
                 {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "h-auto w-full rounded-3xl object-cover md:h-[700px]!") }}
               </div>
             {{ end }}
@@ -41,24 +41,9 @@
             {{ .Content }}
           </div>
           <!-- comments -->
-          {{ if site.Config.Services.Disqus.Shortname }}
-            <div class="mt-20">
-              {{ template "_internal/disqus.html" . }}
-            </div>
-          {{ end }}
+          
         </article>
-        <div class="mt-20">
-          <div id="disqus_thread"></div>
-          <script>
-            (function () {
-              var d = document,
-                s = d.createElement("script");
-              s.src = "https://geeky.disqus.com/embed.js";
-              s.setAttribute("data-timestamp", +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
+        
       </div>
     </div>
   </section>

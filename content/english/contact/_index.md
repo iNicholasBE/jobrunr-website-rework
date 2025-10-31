@@ -1,21 +1,21 @@
 ---
-meta_title: "Contact"
+meta_title: "Contact JobRunr"
 title: "Contact"
-description: "Get in touch with us for support and inquiries. We are here to help!"
+description: "Contact the JobRunr team for Pro sales, enterprise questions, or partnership inquiries. Find links for open-source community support."
 draft: false
 
 hero:
   subtitle: "Contact Us"
-  title: "Get in Touch. <br> Contact Information and Support."
-  description: "Your Trusted Partner in Data Protection with Cutting-Edge <br> Solutions for Comprehensive Data Security."
+  title: "How can we help?"
+  description: "Considering a JobRunr Pro license? We can help you find out if Pro is the right fit for your business."
   image: "/images/logo-icon.png"
   list:
-    - icon: "fa-solid fa-clock-rotate-left"
-      title: "24/7 Customer Support"
-      description: "Our dedicated support team is available 24/7 to assist you with any issues or questions you may have."
-    - icon: "fa-regular fa-snowflake"
-      title: "Self-help resources"
-      description: "Access our extensive knowledge base for self-help resources, including step-by-step guides."
+    - icon: "fa-solid fa-briefcase"
+      title: "Pro & Enterprise Sales"
+      description: "Email us at hello@jobrunr.io for Pro licensing, quotes, or to schedule a one-on-one call with our team."
+    - icon: "fa-brands fa-github"
+      title: "Community & OSS Support"
+      description: "For questions about the open-source JobRunr, please use <a href='https://github.com/jobrunr/jobrunr/discussions'>GitHub Discussions</a>. Your question may already be answered there."
 
 
 # Faq

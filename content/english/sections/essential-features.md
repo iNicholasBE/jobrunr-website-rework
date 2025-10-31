@@ -5,7 +5,7 @@ description: "Your Trusted Partner in Data Protection with Cutting-Edge Solution
 first_feature:
   title: "Organize and understand data"
   description: "Allows you to set thresholds for security parameters and receive real-time alerts when these thresholds are breached ensuring you stay informed f critical events."
-  image: "/images/essential-features/feature-1.png"
+  image: "/images/feature-1.png"
   sub_feature:
     - title: "Detailed User Logs"
       description: "Our platform regularly logs all user activities including logins."
@@ -15,7 +15,7 @@ first_feature:
       icon: "fa-brands fa-squarespace"
 second_feature:
   title: "Secure your data"
-  image: "/images/essential-features/feature-2.png"
+  image: "/images/feature-2.png"
   list:
     - item: "Our platform ensures that all sensitive data is encrypted both during  transmission and while stored"
     - item: "Implement role-based access controls (RBAC) and multi-factor authentication (MFA)."

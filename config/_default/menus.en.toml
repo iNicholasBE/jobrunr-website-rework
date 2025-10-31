@@ -1,15 +1,27 @@
 ############# English navigation ##############
 
 # main menu
-[[main]]
-name = "All Pages"
-weight = 1
 
 [[main]]
-parent = "All Pages"
 name = "Home"
 pageRef = "/"
 weight = 1
+
+[[main]]
+name = "JobRunr Pro"
+pageRef = "/pro"
+weight = 2
+
+[[main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 3
+
+
+[[main]]
+name = "All Pages"
+weight = 4
+
 
 [[main]]
 parent = "All Pages"
@@ -29,11 +41,6 @@ name = "Changelog"
 pageRef = "/changelog"
 weight = 4
 
-[[main]]
-parent = "All Pages"
-name = "Blog"
-pageRef = "/blog"
-weight = 5
 
 [[main]]
 parent = "All Pages"
@@ -41,11 +48,6 @@ name = "Blog Details"
 pageRef = "/blog/post-1"
 weight = 6
 
-[[main]]
-parent = "All Pages"
-name = "Review"
-pageRef = "/review"
-weight = 7
 
 [[main]]
 parent = "All Pages"
@@ -65,20 +67,12 @@ name = "404 Page"
 pageRef = "/404"
 weight = 10
 
-[[main]]
-name = "Features"
-pageRef = "/feature"
-weight = 2
 
-[[main]]
-name = "Pricing"
-pageRef = "/pricing"
-weight = 3
 
 [[main]]
 name = "Contact"
 pageRef = "/contact"
-weight = 4
+weight = 5
 
 
 

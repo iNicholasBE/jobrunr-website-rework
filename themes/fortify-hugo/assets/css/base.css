@@ -107,3 +107,10 @@ blockquote > p {
 .why-JobRunr-section .description a{
   text-decoration: underline !important;
 }
+.contact-container a{
+  text-decoration: underline !important;
+}
+
+.contact-container .btn {
+  background-color:rgb(116, 76, 191) !important;
+}

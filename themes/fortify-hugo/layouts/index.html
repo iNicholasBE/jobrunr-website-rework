@@ -101,6 +101,34 @@
                 {{ partial "image" (dict "Src" .main "Alt" "Banner" "Class" "w-full" "Resize" false) }}
               </div>
             </div>
+            <div class="col-12 pb-4 pt-8 lg:pb-0 order-1">
+              <div
+                class="flex flex-wrap justify-center gap-4 px-4 lg:flex-nowrap lg:justify-between lg:px-0">
+                <div
+                  class="lg:mt-8 [&amp;.aos-animate]:lg:rotate-[-9.4deg]!"
+                  data-aos="fade-in"
+                  data-aos-duration="400"
+                  data-aos-delay="200">
+                  {{ partial "image" (dict "Src" .left "Alt" "Banner left" "Class" `min-[350px]:h-[80px]! lg:h-[72px]! shadow-sm rounded-md md:rounded-xl w-auto` "Resize" false) }}
+                </div>
+                <div
+                  class="[&amp;.aos-animate]:lg:rotate-[2.57deg]!"
+                  data-aos="fade-in"
+                  data-aos-duration="400"
+                  data-aos-delay="350">
+                  {{ partial "image" (dict "Src" .middle "Alt" "Banner middle" "Class" `shadow-sm min-[350px]:h-[80px]! lg:h-[98px]! rounded-md md:rounded-xl w-auto` "Resize" false) }}
+                </div>
+                <div
+                  class="[&amp;.aos-animate]:lg:rotate-[-8.52deg]!"
+                  data-aos="fade-in"
+                  data-aos-duration="400"
+                  data-aos-delay="500">
+                  {{ partial "image" (dict "Src" .right "Alt" "Banner right" "Class" `shadow-sm min-[350px]:h-[80px]! lg:h-[84px]!
+                    rounded-md md:rounded-xl w-auto` "Resize" false)
+                  }}
+                </div>
+              </div>
+            </div>
           {{ end }}
         </div>
       </div>
@@ -153,6 +181,9 @@
       </div>
     </section>
   {{ end }}
+
+
+
   <!-- /How it Works -->
 
 

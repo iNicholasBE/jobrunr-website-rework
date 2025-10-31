@@ -21,7 +21,7 @@
     {{ else }}
       <!-- This will show on other pages, if needed -->
       <div class="relative flex items-center justify-center">
-        {{ partial "image" (dict "Src" .Params.image "Alt" "blog image" "Class" "!h-[300px] mb-6 rounded-3xl object-cover") }}
+        <a href="{{ .RelPermalink }}">{{ partial "image" (dict "Src" .Params.image "Alt" "blog image" "Class" "!h-[300px] mb-6 rounded-3xl object-cover") }}</a>
       </div>
     {{ end }}
     <div class="mb-4 flex items-center gap-x-2">

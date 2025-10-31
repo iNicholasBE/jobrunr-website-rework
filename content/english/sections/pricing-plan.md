@@ -7,7 +7,7 @@ basic_plan:
   monthly_price: "Free"
   yearly_price: "Free"
   billed_monthly: "always and forever"
-  billed_yearly: ""
+  billed_yearly: "always and forever"
   list:
     - item: "Up to 100 recurring jobs"
     - item: "Simple dashboard"

@@ -59,9 +59,9 @@ show_categories = true
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss Starter"
-author = "zeon.studio"
+keywords = ["JobRunr", "Java", "Background Processing", "Job Scheduling", "Task Execution", "Open Source", "Distributed Systems", "Microservices", "Cloud Computing"]
+description = "The simple, open-source Java library for reliable background processing. Never lose a job again. Get a full dashboard, automatic retries, and durable job scheduling backed by your existing database."
+author = "JobRunr"
 image = "images/og-image.png"
 
 
