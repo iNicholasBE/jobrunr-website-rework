@@ -17,8 +17,8 @@
                   <li data-aos="fade-up-sm" data-aos-delay="100">
                     <a
                       class="btn-primary btn"
-                      href="{{ .get_started.link }}"
                       target="_self"
+                      onclick="document.getElementById('trial-modal').classList.remove('hidden'); document.getElementById('modal-backdrop').classList.remove('hidden');"
                       rel="noopener">
                       {{ .get_started.label | markdownify }}
                       <span class="sr-only">Details</span>

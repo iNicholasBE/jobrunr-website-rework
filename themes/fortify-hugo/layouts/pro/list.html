@@ -1,11 +1,7 @@
 {{ define "main" }}
 
 
-  <!-- Pro Features -->
   {{ partial "components/pro-features.html" . }}
-  <!-- /Pro Feature -->
-
-  <!-- Customer Reviews -->
   {{ with .Params.customer_reviews }}
     <section class="section">
       <div class="container">
@@ -38,9 +34,6 @@
       </div>
     </section>
   {{ end }}
-  <!-- /Customer Reviews -->
-
-<!-- Pricing -->
   <section class="section">
     <div class="container">
       <div class="row">
@@ -61,15 +54,103 @@
       </div>
     </div>
   </section>
-  <!-- /Pricing -->
-
-
-  <!-- Faq -->
   {{ partial "components/accordion.html" . }}
-  <!-- /Faq -->
-
-
-  <!-- Call to action -->
   {{ partial "call-to-action.html" . }}
-  <!-- /Call to action -->
+  <div id="modal-backdrop" class="hidden fixed inset-0 z-40 bg-black opacity-50" onclick="document.getElementById('trial-modal').classList.add('hidden'); this.classList.add('hidden');"></div>
+
+  <div id="trial-modal" aria-hidden="true" class="hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 max-h-full flex items-center justify-center">
+      <div class="relative w-full max-w-md max-h-full my-auto">
+          <div class="relative bg-white rounded-lg shadow-xl">
+              <div class="flex items-center justify-between p-4 border-b rounded-t">
+                  <h3 id="modal-title" class="text-xl font-semibold text-gray-900">
+                      Request Your Free 14-Day Pro Trial
+                  </h3>
+                  <button type="button" class="text-gray-500 bg-transparent hover:bg-gray-100 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" onclick="document.getElementById('trial-modal').classList.add('hidden'); document.getElementById('modal-backdrop').classList.add('hidden');">
+                      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+              </div>
+              <div class="p-6">
+                  <form id="trial-form" action="#" method="POST">
+                      <div id="form-content">
+                          <div class="mb-4">
+                              <label for="business-email" class="block mb-2 text-sm font-medium text-gray-900">Business Email</label>
+                              <input type="email" id="business-email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="you@company.com" required>
+                          </div>
+                          <div class="mb-6">
+                              <label for="company" class="block mb-2 text-sm font-medium text-gray-900">Company</label>
+                              <input type="text" id="company" name="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Your Company Name" required>
+                          </div>
+                          <button type="submit" class="w-full text-white btn-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit Request</button>
+                      </div>
+                  </form>
+                  
+                  <div id="trial-success-message" class="hidden text-center">
+                      <p class="text-lg font-medium text-green-600 mb-4">
+                          Your trial request was successfully sent!
+                      </p>
+                      <p class="text-gray-700">
+                          We'll get in touch in **1 business day** (usually even faster!)
+                      </p>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+   <script>
+    document.getElementById('trial-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const formContent = document.getElementById('form-content');
+        const successMessage = document.getElementById('trial-success-message');
+        const modalTitle = document.getElementById('modal-title');
+        
+        // Disable button and show loading state
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        // Collect form data
+        const formData = {
+            email: form.elements.email.value,
+            company: form.elements.company.value
+        };
+
+        // Zapier Webhook URL
+        const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/21269987/u2fk7ul/';
+
+        fetch(zapierWebhookUrl, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            // Even if Zapier returns an error, we assume form was captured
+            // A typical Zapier webhook returns a 200/201 status with 'success' body.
+            if (response.ok || response.status === 200 || response.status === 201) {
+                // Hide the form and show success message
+                formContent.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                
+                // Update the modal title for a clearer confirmation
+                modalTitle.textContent = 'Success!';
+            } else {
+                // Handle non-OK Zapier response (e.g., failed validation on Zapier side)
+                throw new Error('Zapier webhook returned a non-success status.');
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+            
+            // Revert button state and display a generic error message
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Request';
+            alert('There was an error sending your request. Please try again or contact us directly.');
+        });
+    });
+</script>
+
 {{ end }}
