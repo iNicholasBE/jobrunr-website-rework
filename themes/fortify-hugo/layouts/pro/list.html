@@ -329,91 +329,91 @@
           </div>
       </div>
   </div>
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  // 1. Select the anchor link(s) using the attribute selector [href='value']
-  const modalTriggerLink = document.querySelector('a[href="try-jobrunr-pro"]');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('a[href*="try-jobrunr-pro"]');
+    const modal = document.getElementById('trial-modal');
+    const backdrop = document.getElementById('modal-backdrop');
 
-  // 2. Check if the link was found
-  if (modalTriggerLink) {
-    // 3. Remove the original 'href' attribute to prevent navigation
-    modalTriggerLink.removeAttribute('href');
+    if (!modal || !backdrop) return;
 
-    // 4. Set the cursor to 'pointer' to indicate it's clickable (since href is gone)
-    modalTriggerLink.style.cursor = 'pointer';
+    const open = (e) => {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+    };
 
-    // 5. Add a click event listener
-    modalTriggerLink.addEventListener('click', function(event) {
-      // Prevent the default action (though we removed the href, it's good practice)
-      event.preventDefault();
+    const close = () => {
+      modal.classList.add('hidden');
+      backdrop.classList.add('hidden');
+    };
 
-      // Get the modal and backdrop elements
-      const trialModal = document.getElementById('trial-modal');
-      const modalBackdrop = document.getElementById('modal-backdrop');
-
-      // Check if elements exist before trying to modify classes
-      if (trialModal && modalBackdrop) {
-        // Execute the desired action: remove 'hidden' class to show the modal and backdrop
-        trialModal.classList.remove('hidden');
-        modalBackdrop.classList.remove('hidden');
-      } else {
-        console.error("Modal or Backdrop element not found!");
-      }
+    triggers.forEach(el => {
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') open(e);
+      });
     });
-  }
-});
-    document.getElementById('trial-form').addEventListener('submit', function(e) {
-        e.preventDefault();
 
-        const form = e.target;
-        const formContent = document.getElementById('form-content');
-        const successMessage = document.getElementById('trial-success-message');
-        const modalTitle = document.getElementById('modal-title');
-        
-        // Disable button and show loading state
-        const submitButton = form.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending...';
+    backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
-        // Collect form data
-        const formData = {
-            email: form.elements.email.value,
-            company: form.elements.company.value
-        };
+    modal.querySelectorAll('[data-close-modal]').forEach(btn => btn.addEventListener('click', close));
+  });
 
-        // Zapier Webhook URL
-        const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/21269987/u2fk7ul/';
 
-        fetch(zapierWebhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            mode: 'no-cors', 
-            body: JSON.stringify(trialData)
-        })
-        .then(response => {
-            // Even if Zapier returns an error, we assume form was captured
-            // A typical Zapier webhook returns a 200/201 status with 'success' body.
-            if (response.ok || response.status === 200 || response.status === 201) {
-                // Hide the form and show success message
-                formContent.classList.add('hidden');
-                successMessage.classList.remove('hidden');
-                
-                // Update the modal title for a clearer confirmation
-                modalTitle.textContent = 'Success!';
-            } else {
-                // Handle non-OK Zapier response (e.g., failed validation on Zapier side)
-                throw new Error('Zapier webhook returned a non-success status.');
-            }
-        })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-            
-            // Revert button state and display a generic error message
-            submitButton.disabled = false;
-            submitButton.textContent = 'Submit Request';
-            alert('There was an error sending your request. Please try again or contact us directly.');
-        });
-    });
+  document.getElementById('trial-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formContent = document.getElementById('form-content');
+      const successMessage = document.getElementById('trial-success-message');
+      const modalTitle = document.getElementById('modal-title');
+      
+      // Disable button and show loading state
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+
+      // Collect form data
+      const formData = {
+          email: form.elements.email.value,
+          company: form.elements.company.value
+      };
+
+      // Zapier Webhook URL
+      const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/21269987/u2fk7ul/';
+
+      fetch(zapierWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'no-cors', 
+          body: JSON.stringify(trialData)
+      })
+      .then(response => {
+          // Even if Zapier returns an error, we assume form was captured
+          // A typical Zapier webhook returns a 200/201 status with 'success' body.
+          if (response.ok || response.status === 200 || response.status === 201) {
+              // Hide the form and show success message
+              formContent.classList.add('hidden');
+              successMessage.classList.remove('hidden');
+              
+              // Update the modal title for a clearer confirmation
+              modalTitle.textContent = 'Success!';
+          } else {
+              // Handle non-OK Zapier response (e.g., failed validation on Zapier side)
+              throw new Error('Zapier webhook returned a non-success status.');
+          }
+      })
+      .catch(error => {
+          console.error('Error submitting form:', error);
+          
+          // Revert button state and display a generic error message
+          submitButton.disabled = false;
+          submitButton.textContent = 'Submit Request';
+          alert('There was an error sending your request. Please try again or contact us directly.');
+      });
+  });
 </script>
 
 

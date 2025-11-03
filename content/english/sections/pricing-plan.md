@@ -19,7 +19,7 @@ basic_plan:
   button:
     enable: true
     label: "Get started"
-    link: "https://search.maven.org/artifact/org.jobrunr/jobrunr"
+    link: "get-started"
 
 premium_plan:
   title: "Business"
