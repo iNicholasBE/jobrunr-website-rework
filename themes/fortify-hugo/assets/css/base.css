@@ -131,3 +131,40 @@ blockquote > p {
     text-decoration: underline !important;
     cursor: pointer;
   }
+
+/* --- ROTATION FOR LEFT BANNER (Original) --- */
+.rotate-left-lg-fix {
+    /* Base styles (usually transition-related) can be kept simple if needed */
+    transition: transform 0.4s ease; 
+}
+
+@media (min-width: 64rem) {
+    .rotate-left-lg-fix.aos-animate {
+        transform: rotate(-9.4deg) !important;
+    }
+}
+
+
+/* --- ROTATION FOR MIDDLE BANNER --- */
+.rotate-middle-lg-fix {
+    /* Base styles (usually transition-related) can be kept simple if needed */
+    transition: transform 0.4s ease;
+}
+
+@media (min-width: 64rem) {
+    .rotate-middle-lg-fix.aos-animate {
+        transform: rotate(2.57deg) !important;
+    }
+}
+
+/* --- ROTATION FOR RIGHT BANNER --- */
+.rotate-right-lg-fix {
+    /* Base styles (usually transition-related) can be kept simple if needed */
+    transition: transform 0.4s ease;
+}
+
+@media (min-width: 64rem) {
+    .rotate-right-lg-fix.aos-animate {
+        transform: rotate(-8.52deg) !important;
+    }
+}
