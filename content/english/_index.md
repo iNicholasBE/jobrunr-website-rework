@@ -13,7 +13,7 @@ banner:
     get_started:
       enable: true
       label: "Get Started with JobRunr"
-      link: "documentation"
+      link: "get-started"
     learn_more:
       enable: true
       label: "Try JobRunr Pro"
