@@ -17,5 +17,5 @@ main_feature:
   button:
     enable: true
     label: "Try JobRunr Pro for free"
-    link: "/en/try-jobrunr-pro"
+    link: "pro"
 ---

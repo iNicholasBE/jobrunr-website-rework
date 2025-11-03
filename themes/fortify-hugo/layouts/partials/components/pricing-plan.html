@@ -52,8 +52,9 @@
               <li class="mb-2 text-lg ">{{ .item | markdownify }}</li>
             {{ end }}
           </ul>
+
           {{ if .button.enable }}
-            <a class="btn-dark btn" href="{{ .button.link }}"
+            <a class="btn-dark btn" href="{{ .button.link | absURL }}"
               >{{ .button.label | markdownify }}<span class="icon-wrapper"
                 ><span class="icon"
                   ><svg
@@ -127,7 +128,7 @@
           {{ if .button.enable }}
             <a
               class="btn btn-light hover:bg-slate-600 "
-              href="{{ .button.link }}"
+              href="{{ .button.link | absURL }}"
               >{{ .button.label }}<span class="icon-wrapper"
                 ><span class="icon"
                   ><svg
@@ -166,7 +167,7 @@
         <p class="text-lg mb-6">
           Do you need to run JobRunr on unlimited clusters, projects, or microservices? Our Enterprise plan offers unlimited use, premium support, and flexible  support for custom procurement processes.
         </p>
-        <a class="btn-primary btn" href="/en/get-jobrunr-pro-enterprise">
+        <a class="btn-primary btn" href="{{ "get-jobrunr-pro-enterprise" | absURL }}">
           Discover JobRunr Pro Enterprise
           <span class="icon-wrapper">
             <span class="icon">

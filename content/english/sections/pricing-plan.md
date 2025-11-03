@@ -42,5 +42,5 @@ premium_plan:
   button:
     enable: true
     label: "Start a Free Trial"
-    link: "/en/try-jobrunr-pro/"
+    link: "pro"
 ---
