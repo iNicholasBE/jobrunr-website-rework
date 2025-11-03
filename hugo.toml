@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "http://inicholasbe.github.io/jobrunr-website-rework/"
+baseURL = "https://inicholasbe.github.io/jobrunr-website-rework/"
 # Title of your website (required).
 title = "JobRunr"
 # Your theme name
@@ -30,7 +30,7 @@ ID = 'G-MEASUREMENT_ID' # see https://gohugo.io/templates/internal/#configure-go
 
 ########################## Permalinks ############################
 [permalinks.page]
-"pages" = "/:slugorfilename/"
+"pages" = "/:slugorcontentbasename/"
 
 
 ############################# Modules ############################

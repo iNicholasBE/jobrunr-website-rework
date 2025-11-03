@@ -21,7 +21,7 @@ first_feature:
   button:
     enable: true
     label: "Explore Pro Features"
-    link: "/en/documentation/pro/"
+    link: "#comparison-table"
 second_feature:
   title: "Build resilient, complex workflows."
   description: "Stop building fragile scripts. JobRunr Pro lets you create powerful workflows, atomic batches, and job chains to automate complex business logic with smart failure handling."

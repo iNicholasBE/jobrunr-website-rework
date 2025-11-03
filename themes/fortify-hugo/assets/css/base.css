@@ -120,3 +120,8 @@ blockquote > p {
     }
   }
 
+  #comparison-table 
+  .bg-primary {
+    background-color: var(--color-primary);
+    border-bottom: 1px solid white !important;
+  }
