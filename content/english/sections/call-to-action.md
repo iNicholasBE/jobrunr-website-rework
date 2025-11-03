@@ -6,7 +6,7 @@ image: "/images/cta-bg.png"
 button:
   enable: true
   label: "Get Started with JobRunr"
-  link: "documentation"
+  link: "get-started"
 
 # don't create a separate page
 build:

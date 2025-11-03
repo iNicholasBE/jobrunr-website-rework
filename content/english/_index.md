@@ -17,7 +17,7 @@ banner:
     learn_more:
       enable: true
       label: "Try JobRunr Pro"
-      link: "pricing"
+      link: "pro"
 
 #How it Works
 how_it_works:

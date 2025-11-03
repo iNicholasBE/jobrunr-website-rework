@@ -267,7 +267,13 @@
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Priority Support Escalation</th>
               <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">Community Support</td>
               <td class="py-4 px-6 text-center bg-primary text-white">Email / HelpDesk, Priority Bug Handling</td>
-              <td class="py-4 px-6 bg-blue-50 text-gray-900">All Pro Business options + Video Call for Critical Issues </td>
+              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">All Pro Business options + Video Call for Critical Issues </td>
+            </tr>
+            <tr class="bg-white">
+              <th scope="row" class="py-4 px-6 font-medium text-gray-900"></th>
+              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900"></td>
+              <td class="py-4 px-6 text-center bg-primary text-white"><a class="underline" target="_self" onclick="document.getElementById('trial-modal').classList.remove('hidden'); document.getElementById('modal-backdrop').classList.remove('hidden');" rel="noopener">Start your free trial</a></td>
+              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900"><a class="underline" href="/contact">Get In Touch </a></td>
             </tr>
           </tbody>
         </table>
@@ -324,6 +330,38 @@
       </div>
   </div>
    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // 1. Select the anchor link(s) using the attribute selector [href='value']
+  const modalTriggerLink = document.querySelector('a[href="try-jobrunr-pro"]');
+
+  // 2. Check if the link was found
+  if (modalTriggerLink) {
+    // 3. Remove the original 'href' attribute to prevent navigation
+    modalTriggerLink.removeAttribute('href');
+
+    // 4. Set the cursor to 'pointer' to indicate it's clickable (since href is gone)
+    modalTriggerLink.style.cursor = 'pointer';
+
+    // 5. Add a click event listener
+    modalTriggerLink.addEventListener('click', function(event) {
+      // Prevent the default action (though we removed the href, it's good practice)
+      event.preventDefault();
+
+      // Get the modal and backdrop elements
+      const trialModal = document.getElementById('trial-modal');
+      const modalBackdrop = document.getElementById('modal-backdrop');
+
+      // Check if elements exist before trying to modify classes
+      if (trialModal && modalBackdrop) {
+        // Execute the desired action: remove 'hidden' class to show the modal and backdrop
+        trialModal.classList.remove('hidden');
+        modalBackdrop.classList.remove('hidden');
+      } else {
+        console.error("Modal or Backdrop element not found!");
+      }
+    });
+  }
+});
     document.getElementById('trial-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -378,5 +416,6 @@
         });
     });
 </script>
+
 
 {{ end }}

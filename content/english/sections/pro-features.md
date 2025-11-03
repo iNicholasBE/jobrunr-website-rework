@@ -20,7 +20,7 @@ first_feature:
     - item: "Run unlimited recurring jobs to handle enterprise-scale workloads without hitting a cap."
   button:
     enable: true
-    label: "Explore Pro Features"
+    label: "Explore All Pro Features"
     link: "#comparison-table"
 second_feature:
   title: "Build resilient, complex workflows."

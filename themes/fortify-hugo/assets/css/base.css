@@ -125,3 +125,9 @@ blockquote > p {
     background-color: var(--color-primary);
     border-bottom: 1px solid white !important;
   }
+
+  #comparison-table
+  .underline {
+    text-decoration: underline !important;
+    cursor: pointer;
+  }
