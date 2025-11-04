@@ -24,11 +24,6 @@ name = "All Pages"
 weight = 4
 
 
-[[main]]
-parent = "All Pages"
-name = "About"
-pageRef = "/about"
-weight = 2
 
 [[main]]
 parent = "All Pages"
@@ -43,24 +38,7 @@ pageRef = "/changelog"
 weight = 4
 
 
-[[main]]
-parent = "All Pages"
-name = "Blog Details"
-pageRef = "/blog/post-1"
-weight = 6
 
-
-[[main]]
-parent = "All Pages"
-name = "Privacy Policy"
-pageRef = "/pages/privacy-policy"
-weight = 8
-
-[[main]]
-parent = "All Pages"
-name = "Terms of Conditions"
-pageRef = "/pages/terms-conditions"
-weight = 9
 
 [[main]]
 parent = "All Pages"
@@ -92,3 +70,9 @@ weight = 1
 name = "Privacy Policy"
 url = "/privacy-policy"
 weight = 2
+
+[[footer_02]]
+name = "About JobRunr"
+pageRef = "/about"
+weight = 3
+

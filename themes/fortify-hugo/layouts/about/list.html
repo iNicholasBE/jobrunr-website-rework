@@ -28,7 +28,7 @@
                 <div
                   class="relative mt-10 rounded-lg bg-tertiary p-6 pt-10 text-light md:rounded-3xl md:pt-8">
                   <div class="mb-4 flex items-center gap-5">
-                    {{ partial "image" (dict "Src" .avatar "Alt" "CEO Image" "Class" "h-16 w-16 object-cover") }}
+                    {{ partial "image" (dict "Src" .avatar "Alt" "CEO Image" "Class" "h-16 w-16 object-cover rounded-lg") }}
                     <div>
                       <h3 class="h6 text-inherit">{{ .name | markdownify }}</h3>
                       <p class="text-inherit">
@@ -39,8 +39,6 @@
                   <p class="text-lg  text-inherit">
                     {{ .content | markdownify }}
                   </p>
-                  {{ partial "image" (dict "Src" .quote_line "Alt" "quote line" "Class" "pointer-events-none absolute left-1/2 top-6 h-[2px] w-[90%] -translate-x-1/2 object-cover") }}
-                  {{ partial "image" (dict "Src" .quote_bg_shape "Alt" "quote background shape" "Class" "pointer-events-none absolute -bottom-4 -right-4 h-36 w-40 object-contain") }}
                 </div>
               {{ end }}
             </div>
@@ -52,7 +50,7 @@
   <!-- /Banner -->
 
   <!--Brand Logo -->
-  {{ partial "components/brand-logo.html" . }}
+
   <!--/Brand Logo -->
 
   <!-- Core Values -->
@@ -110,6 +108,64 @@
   {{ end }}
   <!-- /Core Values -->
 
+<!-- Green Initiatives  -->
+{{ with .Params.Green_initiatives }}
+<section class="section">
+  <div class="container">
+    <div class="row justify-center">
+      <div
+        class="mx-auto text-center lg:col-10"
+        data-aos="fade-up-sm">
+        <p class="mb-2 text-tertiary font-medium">
+          {{ .subtitle | markdownify }}
+        </p>
+        <h2 class="mb-6">{{ .title | markdownify }}</h2>
+        <p class="text-lg ">{{ .description | markdownify }}</p>
+      </div>
+      
+      <div class="col-12 pt-10">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            
+            <div class="row g-6 items-center bg-light p-6 rounded-xl md:p-10 mb-16 shadow-lg">
+                
+                <div class="md:col-4 flex flex-col items-center justify-center text-center">
+                    {{/* 1% for the Planet Logo */}}
+                    {{ partial "image" (dict "Src" .logo_src "Alt" "1% for the Planet Member" "Class" "h-24 w-auto mb-4 p-6") }}
+                    <a href="https://directories.onepercentfortheplanet.org/profile/rosoco-bv-jobrunr" target="_blank" rel="noopener" class="text-base font-medium text-purple-600 hover:text-purple-800 transition duration-150">
+                        View Our 1% Profile →
+                    </a>
+                </div>
+
+                <div class="md:col-8">
+                    <h3 class="h4 mb-3 text-gray-900">{{ .commitment_title | markdownify }}</h3>
+                    <p class="text-lg text-gray-700">
+                        {{ .commitment_description | markdownify }}
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-10 mt-12">
+              <h3 class="h4 mb-8 text-gray-900 text-center">{{ .initiative_title | markdownify }}</h3>
+              
+              {{ range .initiatives }}
+                <div class="p-0 pb-4">
+                  <h4 class="text-xl font-bold mb-1 text-tertiary">{{ .title | markdownify }}</h4>
+                  <p class="text-gray-700">{{ .description | markdownify }}</p>
+                  {{ if .link }}
+                    <a href="{{ .link }}" class="text-base font-medium text-purple-600 hover:text-purple-800 transition duration-150 mt-1 inline-block">Learn More →</a>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
   <!-- Our Team -->
   {{ with .Params.our_team }}
     <section class="section">
@@ -147,9 +203,6 @@
   {{ end }}
   <!-- Our Team -->
 
-  <!-- Faq -->
-  {{ partial "components/accordion.html" . }}
-  <!-- /Faq -->
 
   <!-- Call to action -->
   {{ partial "call-to-action.html" . }}
