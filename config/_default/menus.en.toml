@@ -23,6 +23,9 @@ weight = 3
 name = "All Pages"
 weight = 4
 
+[[main]]
+name= "Guides"
+pageRef = "/guides"
 
 
 [[main]]

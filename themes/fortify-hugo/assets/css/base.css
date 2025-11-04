@@ -168,3 +168,8 @@ blockquote > p {
         transform: rotate(-8.52deg) !important;
     }
 }
+
+
+.kg-image{
+  margin-top: 0px !important;
+}
