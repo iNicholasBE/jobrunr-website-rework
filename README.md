@@ -1,1 +1,35 @@
-# jobrunr-website-rework
+# This is the website for JobRunr.
+
+If you see a typo, do not hesitate to create a pull request.
+
+## How to run locally
+
+### Prerequisites
+
+1. Install hugo: https://gohugo.io/installation/
+2. Install go: https://go.dev/dl/
+3. Install Node.js: https://nodejs.org/en/download (or use `nvm` https://github.com/nvm-sh/nvm)
+
+### Project setup
+
+Run the following to setup the project:
+```sh
+npm run project-setup
+```
+
+### Run the project locally
+
+1. Install required modules
+
+```sh
+npm i
+```
+
+2. Start local server
+
+
+```sh
+hugo server -D
+```
+
+> `-D` allows to see draft articles

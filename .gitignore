@@ -1,1 +1,10 @@
-node_modules
+/public
+
+/node_modules
+
+.DS_Store
+
+/resources/_gen
+
+.vscode
+hugo
