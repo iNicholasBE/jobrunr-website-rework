@@ -108,22 +108,21 @@ action = "#"
 
 
 ############################# social site ########################
-[[social]]
-title = "facebook"
-icon = "fab fa-facebook" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://www.facebook.com/"
 
-[[social]]
-title = "twitter"
-icon = "fab fa-twitter" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://twitter.com/"
+
+
 
 [[social]]
 title = "github"
 icon = "fa-brands fa-github" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://github.com/"
+link = "https://github.com/jobrunr/jobrunr"
 
 [[social]]
 title = "linkedin"
 icon = "fa-brands fa-linkedin" # fontawesome icon pack : https://fontawesome.com/icons/
-link = "https://www.linkedin.com/"	
+link = "https://www.linkedin.com/company/jobrunr/"	
+
+[[social]]
+title = "youtube"
+icon = "fab fa-youtube" # fontawesome icon pack : https://fontawesome.com/icons/
+link = "https://www.youtube.com/@JobRunr"
