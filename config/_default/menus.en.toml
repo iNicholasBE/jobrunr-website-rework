@@ -19,35 +19,37 @@ pageRef = "/blog"
 weight = 3
 
 
-[[main]]
-name = "All Pages"
-weight = 4
+
 
 [[main]]
 name= "Guides"
 pageRef = "/guides"
-
-
-[[main]]
-parent = "All Pages"
-name = "Integration"
-pageRef = "/integration"
 weight = 3
 
-[[main]]
-parent = "All Pages"
-name = "Changelog"
-pageRef = "/changelog"
-weight = 4
+# [[main]]
+# name = "All Pages"
+# weight = 4
+
+# [[main]]
+# parent = "All Pages"
+# name = "Integration"
+# pageRef = "/integration"
+# weight = 3
+
+# [[main]]
+# parent = "All Pages"
+# name = "Changelog"
+# pageRef = "/changelog"
+# weight = 4
 
 
 
 
-[[main]]
-parent = "All Pages"
-name = "404 Page"
-pageRef = "/404"
-weight = 10
+# [[main]]
+# parent = "All Pages"
+# name = "404 Page"
+# pageRef = "/404"
+# weight = 10
 
 
 

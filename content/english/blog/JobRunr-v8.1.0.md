@@ -1,7 +1,7 @@
 ---
 title: "JobRunr & JobRunr Pro v8.1.0"
 description: "Async Jobs for Quarkus & Micronaut, Embedded Dashboards, bugfixes, and JDK 25 Support."
-feature_image: /blog/JobRunr810.webp
+image: /blog/JobRunr810.webp
 image: "/blog/JobRunr810.webp"
 images:
 - /blog/JobRunr810.webp

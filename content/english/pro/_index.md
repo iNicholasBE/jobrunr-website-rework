@@ -1,6 +1,7 @@
 ---
 title: "JobRunr Pro"
 description: "Turn a Critical Task Into a Competitive Advantage."
+aliases: ["jobrunr-pro"]
 
 
 # Customers Review

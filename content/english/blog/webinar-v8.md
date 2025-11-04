@@ -9,7 +9,7 @@ tags:
   - message-queue
   - job-scheduler
 image: "/blog/launch-webinar.webp" 
-feature_image: "/blog/launch-webinar.webp" 
+image: "/blog/launch-webinar.webp"
 slug: "webinar-v8"
 ---
 <script>
