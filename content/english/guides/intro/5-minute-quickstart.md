@@ -44,7 +44,7 @@ In your application's main method, configure and initialize JobRunr. We will use
 
 Create a `MainApplication.java` file and add the following code:
 
-<pre><code class="language-java">
+```java
 import org.jobrunr.configuration.JobRunr;
 import org.jobrunr.storage.InMemoryStorageProvider;
 
@@ -60,7 +60,7 @@ public class MainApplication {
             .initialize();
     }
 }
-</code></pre>
+```
 
 ### Step 3: Schedule Your First Job
 
@@ -68,7 +68,7 @@ Now, let's schedule a <a href= "/documentation/background-methods/recurring-jobs
 
 Add this code to your `main` method right after `.initialize()`:
 
-<pre><code class="language-java">
+```java
 import org.jobrunr.configuration.JobRunr;
 import org.jobrunr.storage.InMemoryStorageProvider;
 import org.jobrunr.scheduling.BackgroundJob;
@@ -93,7 +93,7 @@ public class MainApplication {
         );
     }
 }
-</code></pre>
+```
 
 > **Tip:** You can also run a job just <a href= "https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/">once (fire-and-forget) </a> using `BackgroundJob.enqueue(() -> ...)` or <a href= "https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/">schedule it</a> for the future with `BackgroundJob.schedule(Instant.now().plusHours(1), () -> ...)` .
 
