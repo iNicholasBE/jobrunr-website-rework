@@ -30,6 +30,7 @@
 
  
  @import "module-overrides.css";
- @import "custom.css"; 
+ @import "chroma-github.css";
+ @import "syntax-highlighter.css"; 
 
 
