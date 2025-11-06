@@ -1,0 +1,131 @@
+/* Documentation Layout Styles */
+
+/* Custom styles for documentation that aren't covered by Tailwind utilities */
+
+/* Syntax highlighting for code blocks - Hugo Chroma */
+.docs-content .highlight {
+  @apply mb-6 rounded-lg overflow-hidden;
+}
+
+.docs-content .highlight pre {
+  @apply m-0 overflow-x-auto p-4 text-sm leading-relaxed;
+  background: #f6f8fa !important;
+}
+
+.docs-content .highlight code {
+  @apply bg-transparent p-0 font-mono;
+  background: transparent !important;
+}
+
+/* Inline code */
+.docs-content :not(pre) > code {
+  @apply rounded bg-light px-1.5 py-0.5 text-sm font-mono text-primary;
+}
+
+/* Override Prism.js styles for documentation */
+.docs-content pre[class*="language-"] {
+  background: #f6f8fa !important;
+  box-shadow: none !important;
+  border: 1px solid #e1e4e8 !important;
+  margin: 1.5rem 0 !important;
+}
+
+.docs-content pre[class*="language-"]>code {
+  border-left: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+.docs-content pre[class*="language-"]:before,
+.docs-content pre[class*="language-"]:after {
+  display: none !important;
+}
+
+/* Industry standard font sizes for documentation */
+.docs-content h1 {
+  @apply text-4xl leading-tight mb-6 mt-8;
+}
+
+.docs-content h2 {
+  @apply text-3xl leading-tight mb-4 mt-8;
+}
+
+.docs-content h3 {
+  @apply text-2xl leading-snug mb-3 mt-6;
+}
+
+.docs-content h4 {
+  @apply text-xl leading-snug mb-3 mt-6;
+}
+
+.docs-content h5 {
+  @apply text-lg leading-snug mb-2 mt-4;
+}
+
+.docs-content h6 {
+  @apply text-base leading-snug mb-2 mt-4;
+}
+
+.docs-content p {
+  @apply text-base leading-relaxed mb-4;
+}
+
+.docs-content ul,
+.docs-content ol {
+  @apply text-base leading-relaxed mb-4;
+}
+
+.docs-content li {
+  @apply mb-2;
+}
+
+.docs-content code {
+  @apply text-sm;
+}
+
+.docs-content pre {
+  @apply text-sm mb-4;
+}
+
+/* First heading shouldn't have top margin */
+.docs-content > h1:first-child,
+.docs-content > h2:first-child,
+.docs-content > h3:first-child,
+.docs-content > h4:first-child,
+.docs-content > h5:first-child,
+.docs-content > h6:first-child {
+  @apply mt-0;
+}
+
+/* Table of Contents styling */
+.docs-toc .toc-content ul {
+  @apply m-0 list-none pl-3;
+}
+
+.docs-toc .toc-content li {
+  @apply mb-2;
+}
+
+.docs-toc .toc-content a {
+  @apply text-text no-underline transition-colors hover:text-primary;
+}
+
+.docs-toc .toc-content ul ul {
+  @apply mt-1 pl-3;
+}
+
+/* Smooth scrolling for anchor links in documentation */
+.content [id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Documentation card hover effects */
+.doc-card a {
+  @apply text-inherit no-underline;
+}
+
+.doc-card:hover h3 {
+  @apply text-primary;
+}

@@ -33,3 +33,7 @@ hugo server -D
 ```
 
 > `-D` allows to see draft articles
+
+### Theme
+
+This project uses the hugo fortify theme. You can find its documentation at https://docs.gethugothemes.com/fortify/.

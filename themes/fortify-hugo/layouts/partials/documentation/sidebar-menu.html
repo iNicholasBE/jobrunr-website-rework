@@ -1,0 +1,105 @@
+{{/* Nested sidebar navigation with collapsible sections */}}
+
+{{ $currentPage := . }}
+{{ $docSection := .Site.GetPage "/documentation" }}
+
+<div class="rounded-lg bg-light p-4">
+  {{/* Get all sections (folders with _index.md) */}}
+  {{ range $docSection.Sections }}
+    {{ $sectionActive := or (eq $currentPage.RelPermalink .RelPermalink) (in $currentPage.RelPermalink .RelPermalink) }}
+    {{ $hasChildren := or .RegularPages .Sections }}
+    <div class="nav-section mb-4{{ if $sectionActive }} active{{ end }}" data-section>
+      <div class="section-header group mb-1 flex items-center justify-between rounded transition-colors{{ if eq $currentPage.RelPermalink .RelPermalink }} bg-primary{{ else }} hover:bg-body{{ end }}">
+        <a href="{{ .RelPermalink }}" class="section-link flex-1 px-2 py-1.5 text-sm font-medium transition-colors{{ if eq $currentPage.RelPermalink .RelPermalink }} text-white{{ else }} text-text-dark group-hover:text-primary{{ end }}">
+          {{ .Title }}
+        </a>
+        {{ if $hasChildren }}
+        <button class="section-toggle flex h-6 w-6 items-center justify-center rounded transition-colors{{ if eq $currentPage.RelPermalink .RelPermalink }} text-white{{ else }} text-text group-hover:text-text-dark{{ end }}" aria-label="Toggle section">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        {{ end }}
+      </div>
+
+      {{/* List all regular pages and subsections in this section */}}
+      {{ if $hasChildren }}
+        <ul class="nav-list ml-2 border-l border-border pl-2">
+          {{/* First show regular pages */}}
+          {{ range .RegularPages.ByWeight }}
+            {{ $isActive := eq $currentPage.RelPermalink .RelPermalink }}
+            <li class="nav-item mb-0.5">
+              <a href="{{ .RelPermalink }}" class="nav-link block rounded px-2 py-1 text-sm text-text transition-colors hover:bg-body hover:text-text-dark{{ if $isActive }} bg-primary font-medium text-white hover:bg-primary hover:text-white{{ end }}">
+                {{ .Title }}
+              </a>
+            </li>
+          {{ end }}
+
+          {{/* Then show subsections */}}
+          {{ range .Sections }}
+            {{ $subSectionActive := or (eq $currentPage.RelPermalink .RelPermalink) (in $currentPage.RelPermalink .RelPermalink) }}
+            <li class="nav-item mb-0.5">
+              <div class="subsection">
+                <a href="{{ .RelPermalink }}" class="nav-link block rounded px-2 py-1 text-sm font-medium transition-colors{{ if $subSectionActive }} bg-primary text-white hover:bg-primary hover:text-white{{ else }} text-text-dark hover:bg-body hover:text-text-dark{{ end }}">
+                  {{ .Title }}
+                </a>
+                {{/* Show subsection pages if there are any */}}
+                {{ if .RegularPages }}
+                  <ul class="ml-2 mt-0.5 border-l border-border pl-2">
+                    {{ range .RegularPages.ByWeight }}
+                      {{ $isActive := eq $currentPage.RelPermalink .RelPermalink }}
+                      <li class="mb-0.5">
+                        <a href="{{ .RelPermalink }}" class="nav-link block rounded px-2 py-1 text-xs text-text transition-colors hover:bg-body hover:text-text-dark{{ if $isActive }} bg-primary font-medium text-white hover:bg-primary hover:text-white{{ end }}">
+                          {{ .Title }}
+                        </a>
+                      </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Also show top-level pages (not in any section) */}}
+  {{ $topLevelPages := where $docSection.RegularPages "Section" "documentation" }}
+  {{ if $topLevelPages }}
+    <div class="nav-section">
+      <ul class="nav-list">
+        {{ range $topLevelPages.ByWeight }}
+          {{ $isActive := eq $currentPage.RelPermalink .RelPermalink }}
+          <li class="nav-item mb-0.5">
+            <a href="{{ .RelPermalink }}" class="nav-link block rounded px-2 py-1 text-sm text-text transition-colors hover:bg-body hover:text-text-dark{{ if $isActive }} bg-primary font-medium text-white hover:bg-primary hover:text-white{{ end }}">
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>
+
+<script>
+// Toggle collapsible sections in documentation sidebar
+document.addEventListener('DOMContentLoaded', function() {
+  const toggles = document.querySelectorAll('.docs-nav .section-toggle');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const section = this.closest('[data-section]');
+      const navList = section.querySelector('.nav-list');
+      const svg = this.querySelector('svg');
+
+      if (navList) {
+        navList.classList.toggle('hidden');
+        svg.classList.toggle('rotate-180');
+      }
+    });
+  });
+});
+</script>

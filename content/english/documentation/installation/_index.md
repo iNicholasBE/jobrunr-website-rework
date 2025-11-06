@@ -5,9 +5,8 @@ keywords: ["jobrunr instalation", "maven central", "jobrunr via maven", "spring 
 date: 2020-04-30T11:12:23+02:00
 layout: "documentation"
 menu: 
-  main: 
+  sidebar:
     identifier: installation
-    parent: 'documentation'
     weight: 5
 ---
 
