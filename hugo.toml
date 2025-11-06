@@ -84,10 +84,7 @@ unsafe = true
 
 [markup.highlight]
 style = 'github'
-lineNos = false
-lineNumbersInTable = false
-noClasses = true
-tabWidth = 4
+noClasses = false
 
 [markup.tableOfContents]
 startLevel = 2

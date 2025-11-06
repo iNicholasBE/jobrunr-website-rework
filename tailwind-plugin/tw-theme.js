@@ -85,13 +85,14 @@ const colorsMap = {};
   });
 });
 
-module.exports = plugin.withOptions(() => {
-  return function ({ addBase, addUtilities, matchUtilities }) {
-    // Default vars on :root; dark vars on .dark
-    addBase({
-      ":root": baseVars,
-      ".dark": darkVars,
-    });
+module.exports = plugin.withOptions(
+  () => {
+    return function ({ addBase, addUtilities, matchUtilities }) {
+      // Default vars on :root; dark vars on .dark
+      addBase({
+        ":root": baseVars,
+        ".dark": darkVars,
+      });
 
     const fontUtils = {};
     Object.keys(fontFamilies).forEach((key) => {
@@ -140,4 +141,22 @@ module.exports = plugin.withOptions(() => {
       { values: colorsMap, type: "color" },
     );
   };
-});
+  },
+  () => ({
+    theme: {
+      extend: {
+        typography: {
+          DEFAULT: {
+            css: {
+              pre: false,
+              code: false,
+              'pre code': false,
+              'code::before': false,
+              'code::after': false
+            },
+          },
+        },
+      },
+    },
+  }),
+);

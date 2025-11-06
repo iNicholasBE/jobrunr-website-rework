@@ -173,3 +173,10 @@ blockquote > p {
 .kg-image{
   margin-top: 0px !important;
 }
+
+.highlight pre {
+  background-color: #FAFAFA !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  border: 1px solid #E5E7EB !important;
+}
