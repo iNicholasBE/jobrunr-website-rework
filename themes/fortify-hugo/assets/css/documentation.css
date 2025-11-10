@@ -1,46 +1,13 @@
 /* Documentation Layout Styles */
 
-/* Custom styles for documentation that aren't covered by Tailwind utilities */
-
-/* Syntax highlighting for code blocks - Hugo Chroma */
-.docs-content .highlight {
-  @apply mb-6 rounded-lg overflow-hidden;
+/* Prevent scroll chaining on sidebar */
+.docs-sidebar {
+  overscroll-behavior: contain;
 }
 
-.docs-content .highlight pre {
-  @apply m-0 overflow-x-auto p-4 text-sm leading-relaxed;
-  background: #f6f8fa !important;
-}
-
-.docs-content .highlight code {
-  @apply bg-transparent p-0 font-mono;
-  background: transparent !important;
-}
-
-/* Inline code */
-.docs-content :not(pre) > code {
-  @apply rounded bg-light px-1.5 py-0.5 text-sm font-mono text-primary;
-}
-
-/* Override Prism.js styles for documentation */
-.docs-content pre[class*="language-"] {
-  background: #f6f8fa !important;
-  box-shadow: none !important;
-  border: 1px solid #e1e4e8 !important;
-  margin: 1.5rem 0 !important;
-}
-
-.docs-content pre[class*="language-"]>code {
-  border-left: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  background-image: none !important;
-  padding: 0 !important;
-}
-
-.docs-content pre[class*="language-"]:before,
-.docs-content pre[class*="language-"]:after {
-  display: none !important;
+/* Highlight expand/collapse button on hover */
+.docs-nav .section-toggle:hover {
+  @apply bg-border/30;
 }
 
 /* Industry standard font sizes for documentation */
@@ -87,16 +54,6 @@
 
 .docs-content pre {
   @apply text-sm mb-4;
-}
-
-/* First heading shouldn't have top margin */
-.docs-content > h1:first-child,
-.docs-content > h2:first-child,
-.docs-content > h3:first-child,
-.docs-content > h4:first-child,
-.docs-content > h5:first-child,
-.docs-content > h6:first-child {
-  @apply mt-0;
 }
 
 /* Table of Contents styling */

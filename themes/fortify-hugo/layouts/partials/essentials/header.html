@@ -76,7 +76,7 @@
         </li>
         {{ end }}
         {{ end }}
-        {{ if site.Params.navigation_button.enable }}
+        {{ if and site.Params.navigation_button.enable (ne $currentPage.Section "documentation") }}
         <li class="mt-4 inline-block lg:hidden">
           <a class="btn btn-dark mt-2 lg:hidden" href="{{ site.Params.navigation_button.link | relLangURL }}"> {{
             site.Params.navigation_button.label }} <span class="icon-wrapper">
@@ -97,7 +97,7 @@
 
       <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
         <!-- navigation btn -->
-        {{ if site.Params.navigation_button.enable }}
+        {{ if and site.Params.navigation_button.enable (ne $currentPage.Section "documentation") }}
         <a class="btn btn-dark hidden lg:flex" href="{{ site.Params.navigation_button.link | relLangURL }}">
           {{ site.Params.navigation_button.label }}
           <span class="icon-wrapper">

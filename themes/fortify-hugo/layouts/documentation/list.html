@@ -3,27 +3,24 @@
   <div class="container">
     <div class="row">
       <!-- Sidebar Navigation -->
-      <aside class="lg:col-3 mb-8 lg:mb-0">
-        <div class="docs-sidebar sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto">
-          <nav class="docs-nav">
-            {{ partial "documentation/sidebar-menu.html" . }}
-          </nav>
-        </div>
-      </aside>
+      <div class="lg:col-3 pl-0">
+        {{ partial "documentation/sidebar-menu.html" . }}
+      </div>
 
       <!-- Main Content Area -->
       <main class="lg:col-9">
-        <article>
+        <article class="content">
           <!-- Page Header -->
           <header class="mb-8">
-            <h1 class="mb-4">{{ .Title }}</h1>
-            {{ with .Description }}
-            <p class="text-lg text-text">{{ . }}</p>
+            <h1 class="text-4xl mt-2 mb-2">{{ .Title }}</h1>
+            {{ $desc := or .Description .Params.subtitle }}
+            {{ with $desc }}
+            <p class="text-xl font-light text-text/70 mb-4">{{ . }}</p>
             {{ end }}
           </header>
 
           <!-- Main Content from _index.md -->
-          <div class="content docs-content">
+          <div class="docs-content">
             {{ .Content }}
           </div>
 
@@ -47,13 +44,6 @@
             </div>
           </div>
           {{ end }}
-
-          <!-- Page Footer -->
-          <footer class="mt-12 border-t border-border pt-6">
-            {{ with .Lastmod }}
-            <p class="text-sm text-text">Last updated: {{ .Format "January 2, 2006" }}</p>
-            {{ end }}
-          </footer>
         </article>
       </main>
     </div>

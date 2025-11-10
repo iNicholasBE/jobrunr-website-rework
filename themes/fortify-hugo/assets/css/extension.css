@@ -1,0 +1,32 @@
+:root {
+    --framework-button-color: #26a6ed;
+}
+
+.framework-button {
+    margin-left: 10px;
+    border: 1px solid var(--framework-button-color);
+    border-radius: 4px;
+    color: var(--framework-button-color);
+    padding: 4px 8px;
+    display: inline-block;
+    @apply text-sm;
+}
+
+.framework-button.active {
+    background-color: var(--framework-button-color);
+    border: 1px solid var(--framework-button-color);
+    color: white;
+}
+
+.framework-button:hover {
+    cursor: pointer;
+}
+
+.framework-content {
+    display: none;
+    width: 100%;
+}
+
+.framework-content.active {
+    display: block;
+}
