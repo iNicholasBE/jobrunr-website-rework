@@ -31,32 +31,36 @@
     display: block;
 }
 
+/* Search Modal Dialog */
 dialog {
-    border: none !important;
-    border-radius: 4px;
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    padding: 0;
+    @apply border-0 rounded-md shadow-2xl p-0 m-auto;
+}
+
+dialog::backdrop {
+    @apply bg-black/60;
 }
 
 dialog .dialog__container {
-    padding: 16px;
+    @apply p-4;
 }
 
 dialog .dialog__content {
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    @apply overflow-y-auto overscroll-contain;
 }
 
 dialog .dialog__footer {
-    padding-top: 16px;
+    @apply pt-4;
+}
+
+dialog .dialog__footer .btn {
+    @apply px-5 py-2.5 text-sm font-medium transition-all;
+    @apply hover:bg-light rounded-md border border-border;
 }
 
 dialog #pagefind-search {
-    width: 80vw;
-    max-width: 900px;
-    height: 70vh;
+    @apply h-[70vh] w-[80vw] max-w-[900px];
+}
 
-    & .pagefind-ui__results {
-        overflow-x: auto;
-    }
+dialog #pagefind-search .pagefind-ui__results {
+    @apply overflow-x-auto;
 }

@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ $isBlogSingle := and .IsPage (eq .Section "blog") }}
-  <section class="section">
+  <section class="section" data-pagefind-body>
     <div class="container">
       <div class="row justify-center">
         <div
@@ -8,7 +8,7 @@
           data-aos="fade-up-sm">
           <h1 class="h2 mb-4">{{ .Title | markdownify }}</h1>
           <p class="mb-6 text-lg">{{ .Params.description | markdownify }}</p>
-          <ul class="mb-4 flex items-center justify-center gap-4">
+          <ul class="mb-4 flex items-center justify-center gap-4" data-pagefind-ignore>
             <li class="text-lg ">
               <span class="flex flex-wrap gap-2 font-medium">
                 {{ partial "image" (dict "Src" .Params.author_image "Alt" .Params.author_name "Class" "h-8 w-8") }}
