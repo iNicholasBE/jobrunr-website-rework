@@ -117,7 +117,7 @@
   const navDropdown = document.querySelector(".nav-dropdown");
   const navDropdownIcon = document.querySelector(".nav-dropdown-icon");
 
-  navDropdown.addEventListener("click", () => {
+  navDropdown?.addEventListener("click", () => {
     navDropdownIcon.classList.toggle("rotate-180");
   });
 })();
