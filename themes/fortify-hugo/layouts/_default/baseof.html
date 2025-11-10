@@ -38,6 +38,17 @@
       {{ block "main" . }}{{ end }}
     </main>
 
+     <dialog id="search-modal">
+      <div class="dialog__container">
+        <section class="dialog__content">
+          <div id="pagefind-search"></div>
+        </section>
+        <footer class="dialog__footer">
+          <button class="btn" onclick="closeDialog('#search-modal')">Close</button>
+        </footer>
+      </div>
+    </dialog>
+
     <!-- footer -->
     {{ partial "essentials/footer.html" . }}
 

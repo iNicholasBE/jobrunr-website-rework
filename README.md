@@ -34,6 +34,12 @@ hugo server -D
 
 > `-D` allows to see draft articles
 
+3. Build with pagefind (you need this at least once for search to work locally)
+
+```
+npx -y pagefind --site public --serve
+```
+
 ### Theme
 
 This project uses the hugo fortify theme. You can find its documentation at https://docs.gethugothemes.com/fortify/.

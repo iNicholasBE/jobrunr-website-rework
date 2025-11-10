@@ -30,3 +30,33 @@
 .framework-content.active {
     display: block;
 }
+
+dialog {
+    border: none !important;
+    border-radius: 4px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 0;
+}
+
+dialog .dialog__container {
+    padding: 16px;
+}
+
+dialog .dialog__content {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+dialog .dialog__footer {
+    padding-top: 16px;
+}
+
+dialog #pagefind-search {
+    width: 80vw;
+    max-width: 900px;
+    height: 70vh;
+
+    & .pagefind-ui__results {
+        overflow-x: auto;
+    }
+}
