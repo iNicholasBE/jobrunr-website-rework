@@ -1,8 +1,8 @@
 /* Documentation Layout Styles */
 
-/* Prevent scroll chaining on sidebar */
-.docs-sidebar {
-  overscroll-behavior: contain;
+/* Navigation container styling - clear visual separation */
+.docs-nav {
+  @apply bg-light/50 rounded-lg border border-border/50 shadow-sm;
 }
 
 /* Highlight expand/collapse button on hover */
