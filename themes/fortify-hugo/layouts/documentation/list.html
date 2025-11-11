@@ -9,6 +9,14 @@
 
       <!-- Main Content Area -->
       <main class="lg:col-9" data-pagefind-body>
+        {{ partial "pagefind-filters.html" . }}
+        {{ if eq .Params.version "pro"}}
+            <span data-pagefind-filter="tag:JobRunr Pro" class="label professional"><span>JobRunr Pro</span></span>
+        {{ else if eq .Params.version "enterprise"}}
+            <span data-pagefind-filter="tag:JobRunr Pro" class="label enterprise"><span>JobRunr Pro Enterprise</span></span>
+        {{ else }}
+            <template data-pagefind-filter="tag:JobRunr"></template>
+        {{ end }}
         <article class="content">
           <!-- Page Header -->
           <header class="mb-8">

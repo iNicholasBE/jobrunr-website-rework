@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ $isBlogSingle := and .IsPage (eq .Section "blog") }}
   <section class="section" data-pagefind-body>
+    {{ partial "pagefind-filters.html" . }}
     <div class="container">
       <div class="row justify-center">
         <div

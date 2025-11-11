@@ -37,7 +37,7 @@ hugo server -D
 3. Build with pagefind (you need this at least once for search to work locally)
 
 ```
-npx -y pagefind --site public --serve
+npx -y pagefind --site public
 ```
 
 ### Theme
