@@ -22,12 +22,12 @@
         {{ end }}
 
         <div class="col-12 pt-10" data-aos="fade-up-sm" data-aos-delay="200">
-          <div class="row g-4 justify-center">
+          <div class="row g-4">
             
-            {{/* FIX 1: Iterates and orders by 'weight' (from lowest to highest). 
+            {{/* FIX 1: Iterates and orders by 'weight' (from lowest to highest).
             This ensures all child pages in the guides section are included and sorted correctly. */}}
             {{ range .Pages.ByWeight }}
-              <div class="md:col-6 lg:col-4">
+              <div class="md:col-6">
                 {{ partial "guide-card.html" (dict "context" .) }}
               </div>
             {{ end }}
