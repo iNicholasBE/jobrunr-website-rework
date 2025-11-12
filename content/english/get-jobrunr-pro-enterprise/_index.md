@@ -4,6 +4,8 @@ title: "Request a Quote for JobRunr Pro Enterprise"
 translationKey: "request-jobrunr-pro-enterprise-quote"
 description: "Achieve unmatched stability and predictable performance for your mission-critical background jobs. Speak to our team."
 draft: false
+type: "get-jobrunr-pro" 
+
 
 hero:
   subtitle: "Request a quote"
