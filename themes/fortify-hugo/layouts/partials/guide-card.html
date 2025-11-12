@@ -11,7 +11,7 @@
         <p>{{ .context.Description }}</p>
     </section>
 
-    <footer class="flex flex-wrap gap-2">
+    <footer class="flex flex-wrap gap-2 mt-auto">
         {{ range $index, $tag := .context.Params.tags }}
             <div class="text-xs font-medium bg-tertiary/10 px-3 py-1 rounded-md">
                 {{ $tag }}
