@@ -43,4 +43,23 @@ premium_plan:
     enable: true
     label: "Start a Free Trial"
     link: "pro"
+
+enterprise_plan:
+  title: "Enterprise"
+  description: "Our most powerful offering with security and much more"
+  monthly_price: "On-Demand"
+  yearly_price: "On-Demand"
+  list:
+    - item: "Everything in JobRunr Business plus:"
+    - item: "Unlimited recurring jobs"
+    - item: "Unlimited clusters & microservices"
+    - item: "Custom procurement support"
+    - item: "Dedicated account manager"
+    - item: "SLA guarantees"
+    - item: "Priority feature requests"
+    - item: "24/7 Premium support"
+  button:
+    enable: true
+    label: "Contact Sales"
+    link: "get-jobrunr-pro-enterprise"
 ---

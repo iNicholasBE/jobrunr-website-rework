@@ -18,13 +18,13 @@
         ></label>
       </div>
     </div>
+    <div class="grid lg:grid-cols-3 gap-2">
     {{ with .Params.basic_plan }}
       <div
-        class="md:col-6"
         data-aos="fade-up-sm"
         data-aos-delay="200">
         <div
-          class="bg-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-8 py-12 last:mb-0 md:gap-12 md:rounded-3xl md:px-11">
+          class="bg-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-6 py-10 xl:px-8 xl:py-12 last:mb-0 md:gap-12 md:rounded-3xl">
           <div class="flex flex-wrap items-center gap-4">
             <h2 class="counter h5 group-[.has-dark-bg]:text-light">
               <span>{{ .title | markdownify }}</span>
@@ -32,10 +32,8 @@
           </div>
           <p class="text-lg ">{{ .description | markdownify }}</p>
           <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <strong class="h2 group-[.has-dark-bg]:text-light"
-              >{{ .currency | markdownify }}<span
-                class=""
-                >{{ .monthly_price | markdownify }}</span
+            <strong class="h3 group-[.has-dark-bg]:text-light"
+              >{{ .currency | markdownify }}<span>{{ .monthly_price | markdownify }}</span
               ></strong
             ><span
               class="text-monthly text-lg  group-[.has-dark-bg]:text-light"
@@ -54,7 +52,7 @@
           </ul>
 
           {{ if .button.enable }}
-            <a class="btn-dark btn" href="{{ .button.link | absURL }}"
+            <a class="btn-dark btn mt-auto" href="{{ .button.link | absURL }}"
               >{{ .button.label | markdownify }}<span class="icon-wrapper"
                 ><span class="icon"
                   ><svg
@@ -85,12 +83,11 @@
     {{ end }}
     {{ with .Params.premium_plan }}
       <div
-        class="md:col-6"
         data-aos="fade-up-sm"
         data-aos-delay="350">
         <div
-          class="has-dark-bg bg-dark text-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-8 py-12 last:mb-0 md:gap-12 md:rounded-3xl md:px-11">
-          <div class="flex flex-wrap items-center gap-4">
+          class="bg-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-6 py-10 xl:px-8 xl:py-12 last:mb-0 md:gap-12 md:rounded-3xl">
+          <div class="flex items-center gap-4">
             <h2 class="counter h5 group-[.has-dark-bg]:text-light">
               <span>{{ .title | markdownify }}</span>
             </h2>
@@ -101,7 +98,7 @@
           </div>
           <p class="text-lg ">{{ .description | markdownify }}</p>
           <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <strong class="h2 group-[.has-dark-bg]:text-light"
+            <strong class="h3 group-[.has-dark-bg]:text-light"
               >{{ .currency | markdownify }}<span
                 class="data-count"
                 data-count-yearly="{{ .yearly_price | markdownify }}"
@@ -127,7 +124,7 @@
           </ul>
           {{ if .button.enable }}
             <a
-              class="btn btn-light hover:bg-slate-600 "
+              class="btn btn-primary mt-auto"
               href="{{ .button.link | absURL }}"
               >{{ .button.label }}<span class="icon-wrapper"
                 ><span class="icon"
@@ -157,32 +154,70 @@
         </div>
       </div>
     {{ end }}
-  </div>
-   <br/>
-  <div class="row justify-center mt-0 md:mt-8" data-aos="fade-up-sm">
-    <div class="col-12 md:col-10 lg:col-8">
-      <div class="rounded-xl bg-light px-8 py-10 text-center md:rounded-3xl md:px-11">
-        <br/>
-        <h3 class="h4 mb-4">Looking for Enterprise?</h3>
-        <p class="text-lg mb-6">
-          Do you need to run JobRunr on unlimited clusters, projects, or microservices? Our Enterprise plan offers unlimited use, premium support, and flexible  support for custom procurement processes.
-        </p>
-        <a class="btn-primary btn" href="{{ "get-jobrunr-pro-enterprise" | absURL }}">
-          Discover JobRunr Pro Enterprise
-          <span class="icon-wrapper">
-            <span class="icon">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-              </svg>
-            </span>
-            <span class="icon" aria-hidden="true">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2This is the c copy">
-                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-              </svg>
-            </span>
-          </span>
-        </a>
+    {{ with .Params.enterprise_plan }}
+      <div
+        data-aos="fade-up-sm"
+        data-aos-delay="400">
+        <div
+          class="bg-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-6 py-10 xl:px-8 xl:py-12 last:mb-0 md:gap-12 md:rounded-3xl">
+          <div class="flex flex-wrap items-center gap-4">
+            <h2 class="counter h5 group-[.has-dark-bg]:text-light">
+              <span>{{ .title | markdownify }}</span>
+            </h2>
+          </div>
+          <p class="text-lg ">{{ .description | markdownify }}</p>
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <strong class="h3 group-[.has-dark-bg]:text-light"
+              >{{ .currency | markdownify }}<span
+                class=""
+                >{{ .monthly_price | markdownify }}</span
+              ></strong
+            ><span
+              class="text-monthly text-lg  group-[.has-dark-bg]:text-light"
+              >{{ .billed_monthly | markdownify }}</span
+            ><span
+              class="text-yearly hidden text-lg  group-[.has-dark-bg]:text-light"
+              >{{ .billed_yearly
+                | markdownify
+              }}</span
+            >
+          </div>
+          <ul class="list list-tertiary">
+            {{ range .list }}
+              <li class="mb-2 text-lg ">{{ .item | markdownify }}</li>
+            {{ end }}
+          </ul>
+
+          {{ if .button.enable }}
+            <a class="btn mt-auto btn-dark" href="{{ .button.link | absURL }}"
+              >{{ .button.label | markdownify }}<span class="icon-wrapper"
+                ><span class="icon"
+                  ><svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 448 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span
+                ><span class="icon" aria-hidden="true"
+                  ><svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 448 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></span
+            ></a>
+          {{ end }}
+        </div>
       </div>
+    {{ end }}
     </div>
   </div>
 {{ end }}
