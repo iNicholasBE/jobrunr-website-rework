@@ -63,8 +63,8 @@ weight = 3
 
 # footer menu left
 [[footer_01]]
-name = "Blog"
-url = "/blog"
+name = "Our License Model"
+url = "/understanding-your-license/"
 weight = 3
 
 [[footer_01]]
