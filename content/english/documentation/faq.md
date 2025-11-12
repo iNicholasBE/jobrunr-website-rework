@@ -6,9 +6,8 @@ description: "Find out all about the architecture and terminology behind JobRunr
 date: 2020-09-16T11:12:23+02:00
 layout: "documentation"
 menu: 
-  main: 
+  sidebar:
     identifier: faq
-    parent: 'documentation'
     name: FAQ
     weight: 95
 sitemap:

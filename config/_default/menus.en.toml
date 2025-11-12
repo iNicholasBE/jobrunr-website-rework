@@ -19,6 +19,12 @@ pageRef = "/blog"
 weight = 3
 
 
+[[main]]
+name= "Documentation"
+pageRef = "/documentation"
+weight = 3
+[main.params]
+hasChildren = false
 
 
 [[main]]

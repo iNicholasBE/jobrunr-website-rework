@@ -6,7 +6,7 @@ keywords: ["real time scheduling", "sheduling", "real time enqueueing", "enqueue
 date: 2020-08-27T11:12:23+02:00
 layout: "documentation"
 menu: 
-  main: 
+  sidebar:
     identifier: real-time-scheduling
     parent: 'jobrunr-pro'
     weight: 3

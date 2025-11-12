@@ -1,19 +1,19 @@
 <a href="{{ .context.Permalink }}"
-    class="block h-full flex flex-col rounded-xl bg-white p-6 shadow-lg hover:shadow-xl transition duration-300">
+    class="block h-full flex flex-col rounded-md bg-body border border-border p-6 hover:border-primary transition-colors">
 
     <header class="mb-4">
-        <h2 class="h5 font-bold text-gray-900">
+        <h2 class="h5 font-bold">
             {{ .context.Title }}
         </h2>
     </header>
 
-    <section class="text-gray-600 mb-6 flex-grow">
+    <section class="mb-6">
         <p>{{ .context.Description }}</p>
     </section>
-    
-    <footer class="flex flex-wrap gap-2 pt-4 border-t border-gray-100 mt-auto"> 
+
+    <footer class="flex flex-wrap gap-2 mt-auto">
         {{ range $index, $tag := .context.Params.tags }}
-            <div class="text-xs font-medium bg-tertiary/10 text-tertiary px-3 py-1 rounded-full">
+            <div class="text-xs font-medium bg-tertiary/10 px-3 py-1 rounded-md">
                 {{ $tag }}
             </div>
         {{ end }}

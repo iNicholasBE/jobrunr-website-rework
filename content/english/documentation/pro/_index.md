@@ -5,9 +5,8 @@ keywords: ["observability", "batches", "server tags", "dynamic queues", "priorit
 date: 2020-04-30T11:12:23+02:00
 layout: "documentation"
 menu: 
-  main: 
+  sidebar:
     identifier: jobrunr-pro
-    parent: 'documentation'
     weight: 50
 ---
 

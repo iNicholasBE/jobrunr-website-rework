@@ -5,7 +5,6 @@ keywords: ["Java Job Manager", "Quartz Alternative", "Spring Batch Alternative",
 subtitle: "The architecture and terminology behind JobRunr"
 description: "Find out all about the architecture and terminology behind JobRunr"
 date: 2020-04-30T11:12:23+02:00
-layout: "documentation"
 sitemap:
   priority: 0.9
   changeFreq: monthly

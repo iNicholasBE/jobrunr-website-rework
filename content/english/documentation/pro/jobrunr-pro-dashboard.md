@@ -6,7 +6,7 @@ keywords: ["proxy", "set proxy in spring boot application", "spring boot set pro
 date: 2020-08-27T11:12:23+02:00
 layout: "documentation"
 menu: 
-  main: 
+  sidebar:
     identifier: jobrunr-pro-dashboard
     parent: 'jobrunr-pro'
     weight: 1

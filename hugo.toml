@@ -22,6 +22,8 @@ defaultContentLanguageInSubdir = false
 
 [params]
 jobRunrVersion = "8.1.0"
+github_url = "https://github.com/jobrunr/jobrunr"
+github_stars = "2.8K"
 
 ########################### Services #############################
 [services]
@@ -51,7 +53,7 @@ target = "assets/watching/hugo_stats.json"
 [build.buildStats]
 enable = true
 [[build.cachebusters]]
-source = 'assets/notwatching/hugo_stats\.json'
+source = 'assets/watching/hugo_stats\.json'
 target = 'css'
 
 ############################# Outputs ############################
@@ -164,7 +166,9 @@ lazy = true
 [[params.plugins.js]]
 link = "plugins/youtube-lite.js"
 lazy = true
-# Add this new entry
-[[plugins.js]]
+[[params.plugins.js]]
 link = "js/codetabs.js"
+lazy = false
+[[params.plugins.js]]
+link = "js/framework.js"
 lazy = false
