@@ -6,11 +6,13 @@ description: "Supercharge your background jobs with advanced features. Scale you
 draft: false
 type: "get-jobrunr-pro" 
 
+
 hero:
   subtitle: "Request a quote"
   title: "JobRunr Pro Business"
   description: "JobRunr Pro Business provides the advanced features and priority support you need to scale. Manage complex workflows. Get real-time monitoring. Handle millions of jobs with confidence."
   image: "/images/logo-icon.png"
+  formType: "jobrunr-pro-business"
   list:
     - icon: "fa-solid fa-bolt"
       title: "Advanced Job Scheduling"

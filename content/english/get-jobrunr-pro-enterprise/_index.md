@@ -11,6 +11,7 @@ hero:
   subtitle: "Request a quote"
   title: "JobRunr Pro Enterprise"
   description: "Built for the largest organizations, JobRunr Pro Enterprise provides unmatched performance, scalability, and compliance to handle mission-critical background jobs. Scale seamlessly, secure your processes, and gain visibility into complex workflows with confidence."
+  formType: "jobrunr-pro-enterprise"
   image: "/images/logo-icon.png"
   list:
     - icon: "fa-solid fa-infinity"
