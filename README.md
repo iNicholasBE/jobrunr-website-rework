@@ -43,3 +43,23 @@ npx -y pagefind --site public
 ### Theme
 
 This project uses the hugo fortify theme. You can find its documentation at https://docs.gethugothemes.com/fortify/.
+
+### JobRunr Extensions
+
+We've extended the fortify theme with a few shortcodes of our own.
+
+#### Sidebar menu
+
+This is currently used on the documentation pages. It supports up to 3 levels of nesting.
+
+##### Usage
+The menu type in the front-matter needs to be `sidebar`.
+
+Example:
+```yaml
+menu: 
+  sidebar:
+    identifier: faq
+    name: FAQ
+    weight: 95
+```
