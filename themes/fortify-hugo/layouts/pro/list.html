@@ -325,7 +325,7 @@
                           Your trial request was successfully sent!
                       </p>
                       <p class="text-gray-700">
-                          We'll get in touch in **1 business day** (usually even faster!)
+                          We'll get in touch in 1 business day (usually even faster!)
                       </p>
                   </div>
 
@@ -367,58 +367,56 @@ const triggers = document.querySelectorAll(
   });
 
 
-  document.getElementById('trial-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+document.getElementById('trial-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      const form = e.target;
-      const formContent = document.getElementById('form-content');
-      const successMessage = document.getElementById('trial-success-message');
-      const modalTitle = document.getElementById('modal-title');
-      
-      // Disable button and show loading state
-      const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+    const form = e.target;
+    const formContent = document.getElementById('form-content');
+    const successMessage = document.getElementById('trial-success-message');
+    const modalTitle = document.getElementById('modal-title');
+    
+    // Disable button and show loading state
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
 
-      // Collect form data
-      const formData = {
-          email: form.elements.email.value,
-          company: form.elements.company.value
-      };
+    // Collect form data
+    const formData = {
+        email: form.elements.email.value,
+        company: form.elements.company.value,
+        form: 'trial' 
+    };
 
-      // Zapier Webhook URL
-      const zapierWebhookUrl = 'https://hooks.zapier.com/hooks/catch/21269987/u2fk7ul/';
+    // This is the Webhook URL you get from your N8N workflow.
+    const n8nWebhookUrl = 'https://n8n.srv851199.hstgr.cloud/webhook/f7a5e38e-4b1d-4f5b-b534-e014ff6b80fe';
 
-      fetch(zapierWebhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          mode: 'no-cors', 
-          body: JSON.stringify(trialData)
-      })
-      .then(response => {
-          // Even if Zapier returns an error, we assume form was captured
-          // A typical Zapier webhook returns a 200/201 status with 'success' body.
-          if (response.ok || response.status === 200 || response.status === 201) {
-              // Hide the form and show success message
-              formContent.classList.add('hidden');
-              successMessage.classList.remove('hidden');
-              
-              // Update the modal title for a clearer confirmation
-              modalTitle.textContent = 'Success!';
-          } else {
-              // Handle non-OK Zapier response (e.g., failed validation on Zapier side)
-              throw new Error('Zapier webhook returned a non-success status.');
-          }
-      })
-      .catch(error => {
-          console.error('Error submitting form:', error);
-          
-          // Revert button state and display a generic error message
-          submitButton.disabled = false;
-          submitButton.textContent = 'Submit Request';
-          alert('There was an error sending your request. Please try again or contact us directly.');
-      });
-  });
+    fetch(n8nWebhookUrl, { 
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData) 
+    })
+    .then(response => {
+        if (response.ok) {
+            // Hide the form and show success message
+            formContent.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            
+            // Update the modal title for a clearer confirmation
+            modalTitle.textContent = 'Success!';
+        } else {
+            // Handle non-OK N8N response
+            throw new Error('N8N webhook returned a non-success status.');
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting form:', error);
+        
+        // Revert button state and display a generic error message
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Request';
+        alert('There was an error sending your request. Please try again or contact us directly.');
+    });
+});
 </script>
 
 

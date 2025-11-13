@@ -9,9 +9,7 @@ tags:
   - quartz
 ---
 
-A potential customer recently asked us a great question.
-
-"We run on Postgres. We know Quartz is the old standard, but how does JobRunr's performance really stack up against it?"
+A potential customer recently asked us: "We run on Postgres. We know Quartz is the old standard, but how does JobRunr's performance really stack up against it?"
 
 It's a question many Java developers have. You have a long-standing scheduler like Quartz that's been part of the ecosystem for years. But you also feel the pain of bottlenecks. You suspect your scheduler might be heavy on the database, but it's hard to prove without a direct comparison.
 
