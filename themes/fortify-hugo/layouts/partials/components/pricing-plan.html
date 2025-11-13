@@ -86,7 +86,7 @@
         data-aos="fade-up-sm"
         data-aos-delay="350">
         <div
-          class="bg-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-6 py-10 xl:px-8 xl:py-12 last:mb-0 md:gap-12 md:rounded-3xl">
+          class="has-dark-bg bg-dark text-light group mb-12 flex min-h-full flex-col items-start gap-8 rounded-xl px-6 py-10 xl:px-8 xl:py-12 last:mb-0 md:gap-12 md:rounded-3xl">
           <div class="flex items-center gap-4">
             <h2 class="counter h5 group-[.has-dark-bg]:text-light">
               <span>{{ .title | markdownify }}</span>
@@ -124,7 +124,7 @@
           </ul>
           {{ if .button.enable }}
             <a
-              class="btn btn-primary mt-auto"
+              class="btn btn-light hover:bg-slate-600 mt-auto"
               href="{{ .button.link | absURL }}"
               >{{ .button.label }}<span class="icon-wrapper"
                 ><span class="icon"
