@@ -32,7 +32,7 @@
             {{ $image:= .Params.image }}
             {{ if $image }}
               <div class="">
-                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "h-auto w-full rounded-3xl object-cover md:h-[700px]!") }}
+                {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "h-auto w-full rounded-3xl object-cover md:max-h-[700px]!") }}
               </div>
             {{ end }}
           </div>
