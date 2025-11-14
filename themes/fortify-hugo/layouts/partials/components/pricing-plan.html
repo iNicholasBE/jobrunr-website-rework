@@ -32,10 +32,13 @@
           </div>
           <p class="text-lg ">{{ .description | markdownify }}</p>
           <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <strong class="h3 group-[.has-dark-bg]:text-light"
-              >{{ .currency | markdownify }}<span>{{ .monthly_price | markdownify }}</span
-              ></strong
-            ><span
+            <strong class="h4 group-[.has-dark-bg]:text-light">
+              <!-- UPDATED: Added .price-currency class and data-usd-symbol -->
+              <span class="price-currency" data-usd-symbol="{{ .currency_usd | default .currency | markdownify }}">{{ .currency | markdownify }}</span>
+              <!-- UPDATED: Added .price-value class and data-usd-price-monthly -->
+              <span class="price-value" data-usd-price-monthly="{{ .monthly_price_usd | default .monthly_price | markdownify }}">{{ .monthly_price | markdownify }}</span>
+            </strong>
+            <span
               class="text-monthly text-lg  group-[.has-dark-bg]:text-light"
               >{{ .billed_monthly | markdownify }}</span
             ><span
@@ -100,14 +103,19 @@
           </div>
           <p class="text-lg ">{{ .description | markdownify }}</p>
           <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <strong class="h3 group-[.has-dark-bg]:text-light"
-              >{{ .currency | markdownify }}<span
-                class="data-count"
+            <strong class="h4 group-[.has-dark-bg]:text-light">
+              <!-- UPDATED: Added .price-currency class and data-usd-symbol -->
+              <span class="price-currency" data-usd-symbol="{{ .currency_usd | default .currency | markdownify }}">{{ .currency | markdownify }}</span>
+              <!-- UPDATED: Added .price-value class and data-usd-* attributes for monthly/yearly -->
+              <span
+                class="data-count price-value"
                 data-count-yearly="{{ .yearly_price | markdownify }}"
                 data-count-monthly="{{ .monthly_price | markdownify }}"
-                >{{ .monthly_price | markdownify }}</span
-              ></strong
-            ><span
+                data-usd-price-yearly="{{ .yearly_price_usd | default .yearly_price | markdownify }}"
+                data-usd-price-monthly="{{ .monthly_price_usd | default .monthly_price | markdownify }}"
+                >{{ .monthly_price | markdownify }}</span>
+            </strong>
+            <span
               class="text-monthly text-lg  group-[.has-dark-bg]:text-light"
               >{{ .billed_monthly | markdownify }}</span
             ><span
@@ -153,7 +161,7 @@
                     <path
                       d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></span
             ></a>
-            <a class="flex mt-4 ml-2 text-sm opacity-80 hover:opacity-100 items-center" href="{{ .button.link2 | absURL }}">Or get in touch to request a quote</a>
+            <a class="flex mt-4 ml-2 text-sm opacity-80 hover:opacity-100 items-center" href="{{ .button.link2 }}">Or get in touch to request a quote</a>
             </div>
           {{ end }}
                   
@@ -174,20 +182,20 @@
           </div>
           <p class="text-lg ">{{ .description | markdownify }}</p>
           <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <strong class="h3 group-[.has-dark-bg]:text-light"
-              >{{ .currency | markdownify }}<span
-                class=""
-                >{{ .monthly_price | markdownify }}</span
-              ></strong
-            ><span
+            <strong class="h4 group-[.has-dark-bg]:text-light">
+              <!-- UPDATED: Added .price-currency class and data-usd-symbol -->
+              <span class="price-currency" data-usd-symbol="{{ .currency_usd | default .currency | markdownify }}">{{ .currency | markdownify }}</span>
+              <!-- UPDATED: Added .price-value class and data-usd-price-monthly -->
+              <span class="price-value" data-usd-price-monthly="{{ .monthly_price_usd | default .monthly_price | markdownify }}">{{ .monthly_price | markdownify }}</span>
+            </strong>
+            <span
               class="text-monthly text-lg  group-[.has-dark-bg]:text-light"
               >{{ .billed_monthly | markdownify }}</span
             ><span
               class="text-yearly hidden text-lg  group-[.has-dark-bg]:text-light"
               >{{ .billed_yearly
                 | markdownify
-              }}</span
-            >
+              }}</span>
           </div>
           <ul class="list list-tertiary">
             {{ range .list }}
@@ -230,3 +238,60 @@
     </div>
   </div>
 {{ end }}
+
+<!-- 
+  ADD THIS SCRIPT BLOCK TO YOUR TEMPLATE
+  (Or add it to your site's global JS file)
+-->
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // List of currencies to treat as "Dollar"
+    // You can add others like 'CAD', 'AUD', etc.
+    const dollarCurrencies = ['USD', 'CAD', 'AUD', 'NZD', 'SGD', 'HKD'];
+
+    fetch('https://ipapi.co/currency/')
+      .then(resp => {
+        if (!resp.ok) {
+          throw new Error('Currency API failed');
+        }
+        return resp.text()
+      })
+      .then(currency => {
+        
+        if (dollarCurrencies.includes(currency)) {
+          // 1. Update all currency symbols
+          const currencyElements = document.querySelectorAll('.price-currency');
+          currencyElements.forEach(el => {
+            if (el.dataset.usdSymbol) {
+              el.innerHTML = el.dataset.usdSymbol;
+            }
+          });
+
+          // 2. Update all price values
+          const priceElements = document.querySelectorAll('.price-value');
+          priceElements.forEach(el => {
+            // Check if it's the premium plan toggle
+            const isPremiumToggle = el.classList.contains('data-count');
+            
+            if (isPremiumToggle && el.dataset.usdPriceMonthly && el.dataset.usdPriceYearly) {
+              // Update the displayed price
+              el.innerHTML = el.dataset.usdPriceMonthly;
+              
+              // Update the data attributes for the toggle script to use
+              el.dataset.countMonthly = el.dataset.usdPriceMonthly;
+              el.dataset.countYearly = el.dataset.usdPriceYearly;
+
+            } else if (el.dataset.usdPriceMonthly) {
+              // This handles Basic and Enterprise plans
+              el.innerHTML = el.dataset.usdPriceMonthly;
+            }
+          });
+        }
+        // If not a dollar currency, do nothing. The default EUR prices will be shown.
+        
+      })
+      .catch(err => {
+        console.warn('Could not fetch user currency, defaulting to EUR.');
+      });
+  });
+</script>

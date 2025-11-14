@@ -20,6 +20,8 @@ basic_plan:
     enable: true
     label: "Get started"
     link: "get-started"
+  currency_usd: ""
+  monthly_price_usd: "Free"
 
 premium_plan:
   title: "Business"
@@ -42,12 +44,16 @@ premium_plan:
   button:
     enable: true
     label: "Start a Free Trial"
-    link: "pro"
-    link2: "get-jobrunr-pro-business"
+    link: "en/pro"
+    link2: "/en/get-jobrunr-pro-business"
+  currency_usd: "$"
+  monthly_price_usd: "950"
+  yearly_price_usd: "10000"
 
 enterprise_plan:
   title: "Enterprise"
   description: "Built for mission-critical scale & includes unlimited PRD clusters"
+  currency: ""
   monthly_price: "On-Demand"
   yearly_price: "On-Demand"
   list:
@@ -62,5 +68,7 @@ enterprise_plan:
   button:
     enable: true
     label: "Contact Sales"
-    link: "get-jobrunr-pro-enterprise"
+    link: "en/get-jobrunr-pro-enterprise"
+  currency_usd: ""
+  monthly_price_usd: "On-Demand"
 ---
