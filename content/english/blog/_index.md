@@ -5,6 +5,6 @@ description: "this is meta description"
 
 blog:
   subtitle: "The JobRunr Blog"
-  title: "Everything you need to know about <br> Background Processing"
+  title: "Everything you need to know about <br> background processing"
   description: "Explore technical deep-dives, product updates, and real-world examples to help you build, scale, and monitor your Java background jobs."
 ---

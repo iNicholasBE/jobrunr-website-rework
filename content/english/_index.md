@@ -25,7 +25,7 @@ banner:
 #How it Works
 how_it_works:
   subtitle: "Go from fragile scripts to resilient workflows"
-  title: "Schedule Jobs with Simple Java Methods"
+  title: "Schedule jobs with simple Java methods"
   description: "Add JobRunr using your favorite build tool, like Maven or Gradle, and start scheduling jobs in minutes."
   features:
     - title: "Fire-and-forget jobs"
@@ -50,13 +50,13 @@ how_it_works:
 
 # Pricing
 pricing:
-  title: "Find the Right Plan for You"
+  title: "Find the right plan for you"
   subtitle: "Pricing & Plans"
   description: "Start for free with our Open Source version. Or get advanced features like priority queues, <br /> batches, and workflow management with JobRunr Pro."
 
 # Customers Review
 customer_reviews:
-  title: "Trusted by Developers Worldwide"
+  title: "Trusted by developers worldwide"
   subtitle: "300,000+ Monthly Downloads"
   description: "Don't trust our word on it. Read what these industry leaders have to say about JobRunr"
 ---
