@@ -24,7 +24,7 @@ hero:
 
 # Faq
 accordion:
-  title: "Frequently Asked Questions"
+  title: "Frequently asked questions"
   subtitle: "FAQ"
   description: "Find answers to common questions about JobRunr Pro Business. Learn about features. See how we help you scale."
 ---

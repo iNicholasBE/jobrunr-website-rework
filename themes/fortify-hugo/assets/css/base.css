@@ -180,3 +180,7 @@ blockquote > p {
 .kg-image{
   margin-top: 0px !important;
 }
+
+.primary-accordion-content a{
+  text-decoration: underline !important;
+}

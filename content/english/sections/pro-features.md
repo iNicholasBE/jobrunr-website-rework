@@ -1,5 +1,5 @@
 ---
-title: "Turn a Critical Task Into a Competitive Advantage."
+title: "Turn a critical task into a competitive advantage."
 subtitle: "JobRunr Pro"
 description: "With JobRunr Pro's proven scalability and enterprise features, you can free your team from maintaining fragile, in-house job schedulers and focus on what truly matters."
 button:

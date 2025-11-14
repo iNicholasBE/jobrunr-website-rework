@@ -1,6 +1,6 @@
 ---
 title: "JobRunr Pro"
-description: "Turn a Critical Task Into a Competitive Advantage."
+description: "Turn a critical task into a competitive advantage."
 aliases: ["jobrunr-pro"]
 
 

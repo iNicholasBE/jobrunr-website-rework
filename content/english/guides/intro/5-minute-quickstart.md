@@ -9,7 +9,7 @@ tags:
 draft: false
 aliases: ["/get-started"]
 ---
-### Step 1: Add the JobRunr Dependency
+### Step 1: Add the JobRunr dependency
 
 Add JobRunr to your project using Maven or Gradle. This quickstart uses the built-in in-memory storage, so we only need a json parser and we are ready to go. 
 
@@ -62,7 +62,7 @@ public class MainApplication {
 }
 ```
 
-### Step 3: Schedule Your First Job
+### Step 3: Schedule your first job
 
 Now, let's schedule a <a href= "/documentation/background-methods/recurring-jobs/recurring"> recurring job </a> to run every minute. JobRunr uses CRON expressions for scheduling.
 
@@ -97,7 +97,7 @@ public class MainApplication {
 
 > **Tip:** You can also run a job just <a href= "https://www.jobrunr.io/en/documentation/background-methods/enqueueing-jobs/">once (fire-and-forget) </a> using `BackgroundJob.enqueue(() -> ...)` or <a href= "https://www.jobrunr.io/en/documentation/background-methods/scheduling-jobs/">schedule it</a> for the future with `BackgroundJob.schedule(Instant.now().plusHours(1), () -> ...)` .
 
-### Step 4: Watch it Run
+### Step 4: Watch it run
 
 Run your `MainApplication.java` file. That's it.
 
@@ -109,7 +109,7 @@ Run your `MainApplication.java` file. That's it.
 
 ---
 
-### You're All Set
+### What's next?
 
 You've just scheduled your first reliable, recurring job. Here is what to do next.
 

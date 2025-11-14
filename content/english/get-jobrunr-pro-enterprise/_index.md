@@ -24,7 +24,7 @@ hero:
 
 # Faq
 accordion:
-  title: "Frequently Asked Questions"
+  title: "Frequently asked questions"
   subtitle: "FAQ"
   description: "Your Trusted Partner in Data Protection with Cutting-Edge <br> Solutions for Comprehensive Data Security."
 ---

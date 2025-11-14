@@ -1,5 +1,5 @@
 ---
-title: "Frequently Asked Questions"
+title: "Frequently asked questions"
 translationKey: "faq"
 subtitle: "Some frequently asked questions about JobRunr..."
 description: "Find out all about the architecture and terminology behind JobRunr"

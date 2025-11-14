@@ -11,7 +11,7 @@ features:
     image: "/images/key-features/3.gif"
 
 main_feature:
-  title: "JobRunr Pro: Built for Production at Scale"
+  title: "JobRunr Pro: Built for production at scale"
   description: "JobRunr Pro gives you priority queues, batches with chaining, and workflow management. Ideal for time-critical processes and large-scale data workloads."
   image: "/images/key-features/4.webp"
   button:
