@@ -1,4 +1,7 @@
 ---
+meta_title: "JobRunr - Distributed Java Background Job Scheduler"
+title: "JobRunr - Distributed Java Background Job Scheduler"
+
 # Banner
 banner:
   title: "Never lose a background job again."
