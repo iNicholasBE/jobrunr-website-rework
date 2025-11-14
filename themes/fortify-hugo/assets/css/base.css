@@ -65,41 +65,6 @@ blockquote > p {
   @apply my-0!;
 }
 
-@font-face {
-  font-family: "ClashGrotesk";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/fonts/ClashGrotesk-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "ClashGrotesk";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/ClashGrotesk-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Satoshi";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Satoshi";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Satoshi";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
-}
-
 .why-image {
   max-width: 28rem !important;
 }
