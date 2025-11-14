@@ -20,9 +20,9 @@
   },
   "fonts": {
     "font_family": {
-      "primary": "Satoshi",
+      "primary": "ui-sans-serif,system-ui,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'",
       "primary_type": "sans-serif",
-      "secondary": "ClashGrotesk",
+      "secondary": "ui-sans-serif,system-ui,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'",
       "secondary_type": "sans-serif"
     },
     "font_size": { "base": "16", "scale": "1.262" }
