@@ -29,6 +29,6 @@ Subject to the purchase of a [corresponding subscription]({{< ref "/pro.md" >}})
 
 ### What do you mean with 1 project / production cluster?
 
-We want this to be simple and fair. We created a dedicated page that explains exactly what a "project" is and what your license covers. It includes examples for hybrid-cloud, microservices, and other common scenarios.
+We want this to be simple and fair. We created a dedicated page that explains exactly what a "project" is and what your license covers.
 
 Please see our full [License Explanation Page]({{< ref "understanding-your-license.md" >}}) for all the details.
