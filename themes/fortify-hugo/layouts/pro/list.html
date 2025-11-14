@@ -57,7 +57,7 @@
 
 
   <!-- Feature Comparison Table  -->
- <section class="section bg-gray-50" id="comparison-table">
+<section class="section bg-gray-50" id="comparison-table">
     <div class="container">
       <div class="text-center mb-12">
         <h2 class="h2 mb-4 text-gray-900" data-aos="fade-up-sm">
@@ -69,18 +69,17 @@
       </div>
 
       <div class="overflow-x-auto relative shadow-lg sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500">
+        <table class="w-full text-sm text-left text-gray-500 table-fixed">
           <thead class="text-xs uppercase bg-gray-200 border-b border-gray-300">
             <tr>
               <th scope="col" class="py-3 px-6 w-1/3 text-gray-900">Feature</th>
-              <th scope="col" class="py-3 px-6 text-center bg-gray-100 text-gray-900">Open Source (OSS)</th>
-              <th scope="col" class="py-3 px-6 text-center bg-primary text-white">Pro Business</th>
-              <th scope="col" class="py-3 px-6 text-center bg-blue-50 text-gray-900">Pro Enterprise</th>
+              <th scope="col" class="py-3 px-6 text-center bg-[#FAFAFA] text-gray-900">Open Source (OSS)</th>
+              <th scope="col" class="py-3 px-6 text-center bg-black text-white">Pro Business</th>
+              <th scope="col" class="py-3 px-6 text-center bg-[#FAFAFA] text-gray-900">Pro Enterprise</th>
             </tr>
           </thead>
           <tbody>
             
-            <!-- Group: Job Execution & Scheduling -->
             <tr class="bg-gray-100">
                 <td colspan="4" class="py-2 px-6 font-bold text-base text-gray-900 sticky top-0 bg-gray-100">
                     Job Execution & Scheduling
@@ -90,60 +89,59 @@
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                <a class="dashed-underline" href="{{ "documentation/background-methods/enqueueing-jobs/" | relURL }}"> Enqueueing & Scheduling Jobs (Fire-and-Forget)</a>
               </th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">✅</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/background-methods/carbon-aware-jobs/" | relURL }}">Carbon-Aware Job Scheduling</th></a>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">✅</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/real-time-scheduling/" | relURL }}">Real-Time Scheduling & Enqueueing (Instant execution)</th></a>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Max Recurring Jobs</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">~100 (DB dependent)</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">Up to 5,000</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">Unlimited</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">~100 (DB dependent)</td>
+              <td class="py-4 px-6 text-center bg-black text-white">Up to 5,000</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Unlimited</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/background-methods/dealing-with-exceptions/" | relURL }}">Automatic Retry Handling (Exponential Back-off)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">✅</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/background-methods/recurring-jobs/#recurring-jobs-missed-during-downtime" | relURL }}">Schedule Missed Recurring Jobs (After Downtime)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/job-timeout/" | relURL }}">Job Time-outs</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/configuration/virtual-threads/" | relURL }}">Thread Support (e.g., Project Loom / Virtual Threads)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">✅</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
 
-            <!-- Group: Advanced Workflow & Control -->
             <tr class="bg-gray-100">
                 <td colspan="4" class="py-2 px-6 font-bold text-base text-gray-900 sticky top-0 bg-gray-100">
                     Advanced Workflow & Control
@@ -152,61 +150,60 @@
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/job-chaining/" | relURL }}">Workflow Management (Job Chaining)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/batches/" | relURL }}">Batch Processing (Atomic Batches)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/priority-queues/" | relURL }}">Priority Queues (Up to 5 Levels)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/dynamic-queues/" | relURL }}">Dynamic Queues (Fair-Usage Multi-Tenancy)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/rate-limiters/" | relURL }}">Rate Limiting</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/mutexes/" | relURL }}">Mutexes (Resource Locking)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/server-tags/" | relURL }}">Server Tags (Run jobs on specific servers)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/transactions/" | relURL }}">Transaction Plugin (Spring, Micronaut, Quarkus)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
 
-            <!-- Group: Observability & Monitoring -->
             <tr class="bg-gray-100">
                 <td colspan="4" class="py-2 px-6 font-bold text-base text-gray-900 sticky top-0 bg-gray-100">
                     Observability & Monitoring
@@ -215,26 +212,25 @@
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/jobrunr-pro-dashboard/" | relURL }}">Dashboard Features</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">Simple Overview</td>
-              <td class="py-4 px-6 bg-primary text-white">Enhanced Search, Filters, Labels, Observability Integration (Micrometer)</td>
-              <td class="py-4 px-6 bg-blue-50 text-gray-900">All Pro Business features + Dashboard SSO, GDPR/HIPAA Redaction</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Simple Overview</td>
+              <td class="py-4 px-6 bg-black text-white">Enhanced Search, Filters, Labels, Observability Integration (Micrometer)</td>
+              <td class="py-4 px-6 bg-[#FAFAFA] text-gray-900">All Pro Business features + Dashboard SSO, GDPR/HIPAA Redaction</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/jobrunr-pro-multi-dashboard/" | relURL }}">Multi-Cluster Dashboard</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">❌</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white">❌</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "guides/advanced/k8s-autoscaling/" | relURL }}">K8s Autoscaling Support</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">✅</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white"><span class="table-check-icon"></span></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
 
-            <!-- Group: Enterprise Readiness & Support -->
             <tr class="bg-gray-100">
                 <td colspan="4" class="py-2 px-6 font-bold text-base text-gray-900 sticky top-0 bg-gray-100">
                     Enterprise Readiness & Support
@@ -243,59 +239,59 @@
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "documentation/pro/sso-authentication/" | relURL }}">Dashboard Security (SSO / OpenID Connect)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">❌</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white">❌</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Enterprise Hardened Releases</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">Standard</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">Standard</td>
-              <td class="py-4 px-6 bg-blue-50 text-gray-900">✅ (Stress-tested, benchmarked, external security auditing)</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Standard</td>
+              <td class="py-4 px-6 text-center bg-black text-white">Standard</td>
+              <td class="py-4 px-6 bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span> (Stress-tested, benchmarked, external security auditing)</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "blog/2023-06-06-jobrunr-pro-panic-button/" | relURL }}">Panic Button (Direct notification for critical issues)</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">❌</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">1 / Year</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white">❌</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">1 / Year</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Software Bill of Materials (SBOM)</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">❌</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">✅</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white">❌</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><span class="table-check-icon"></span></td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Commercial License</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">LGPL 3.0</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">Standard EULA</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">Flexible support for custom procurement processes</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">LGPL 3.0</td>
+              <td class="py-4 px-6 text-center bg-black text-white">Standard EULA</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Flexible support for custom procurement processes</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Payment</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">❌</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">Credit Card</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">Invoice or Credit Card</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">❌</td>
+              <td class="py-4 px-6 text-center bg-black text-white">Credit Card</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Invoice or Credit Card</td>
             </tr>
             <tr class="bg-white border-b border-gray-100">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">
                 <a class="dashed-underline" href="{{ "understanding-your-license/" | relURL }}">Cluster / Installation Limit</a></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">Single Cluster (Implied)</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">One PRD Cluster</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">Unlimited</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Single Cluster (Implied)</td>
+              <td class="py-4 px-6 text-center bg-black text-white">One PRD Cluster</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Unlimited</td>
             </tr>
             <tr class="bg-white">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900">Priority Support Escalation</th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900">Community Support</td>
-              <td class="py-4 px-6 text-center bg-primary text-white">Email / HelpDesk, Priority Bug Handling</td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900">All Pro Business options + Video Call for Critical Issues </td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">Community Support</td>
+              <td class="py-4 px-6 text-center bg-black text-white">Email / HelpDesk, Priority Bug Handling</td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900">All Pro Business options + Video Call for Critical Issues </td>
             </tr>
             <tr class="bg-white">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900"></th>
-              <td class="py-4 px-6 text-center bg-gray-100 text-gray-900"></td>
-              <td class="py-4 px-6 text-center bg-primary text-white"><a class="underline" target="_self" onclick="document.getElementById('trial-modal').classList.remove('hidden'); document.getElementById('modal-backdrop').classList.remove('hidden');" rel="noopener">Start your free trial</a></td>
-              <td class="py-4 px-6 text-center bg-blue-50 text-gray-900"><a class="underline" href="{{ "get-jobrunr-pro-enterprise" | absURL }}">Get In Touch </a></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"></td>
+              <td class="py-4 px-6 text-center bg-black text-white"><a class="underline" target="_self" onclick="document.getElementById('trial-modal').classList.remove('hidden'); document.getElementById('modal-backdrop').classList.remove('hidden');" rel="noopener">Start your free trial</a></td>
+              <td class="py-4 px-6 text-center bg-[#FAFAFA] text-gray-900"><a class="underline" href="{{ "get-jobrunr-pro-enterprise" | absURL }}">Get In Touch </a></td>
             </tr>
           </tbody>
         </table>
